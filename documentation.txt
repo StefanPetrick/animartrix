@@ -1,0 +1,56 @@
+Basic Transitions
+
+
+Scroll along x, y, z:       animation.offset_x, offset_y, offset_z
+
+Rotate:                     animation.angle
+
+Zoom / Scale one dimension: animation.scale_x, scale_y, scale_z 
+
+Zoom in 2D:                 animation.dist
+
+Shift one dimension:        animation.offset_x, offset_y, offset_z;  
+
+
+
+
+Basic Animation Building Blocks
+
+
+Spiral
+
+Ring
+
+Tunnel
+
+Magnification Lens
+
+Starfield
+
+Caleidoscope
+
+
+
+Basic Filters
+
+
+Linear filter
+
+Radial filter
+
+
+
+Basic Color Mappings
+
+RGB
+
+Add, subtract, multiply, filter mask, average
+
+
+
+Interesting Techniques
+
+
+Cartesian domain warping
+
+Polar domain warping
