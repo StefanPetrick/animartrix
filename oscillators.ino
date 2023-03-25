@@ -5,7 +5,7 @@ void calculate_oscillators(oscillators &timings) {
 
   for (int i = 0; i < num_oscillators; i++) {
     
-    move.linear[i] = runtime * timings.ratio[i];     // continously rising offsets, returns              0 to max_float
+    move.linear[i] = (runtime + timings.offset[i]) * timings.ratio[i];     // continously rising offsets, returns              0 to max_float
     
     move.radial[i] = fmodf(move.linear[i], 2 * PI);  // angle offsets for continous rotation, returns    0 to 2 * PI
     
