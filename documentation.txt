@@ -5,7 +5,7 @@ Scroll along x, y, z:       animation.offset_x, offset_y, offset_z
 
 Rotate:                     animation.angle
 
-Zoom / Scale one dimension: animation.scale_x, scale_y, scale_z 
+Scale one dimension:        animation.scale_x, scale_y, scale_z 
 
 Zoom in 2D:                 animation.dist
 
@@ -17,26 +17,26 @@ Shift one dimension:        animation.offset_x, offset_y, offset_z;
 Basic Animation Building Blocks
 
 
-Spiral
+Spiral:              change angle depending on distance
 
-Ring
+Ring:                set angle to a fix number
 
-Tunnel
+Tunnel:              change z depending on distance
 
-Magnification Lens
+Magnification Lens:  manipulate distance function
 
-Starfield
+Starfield            manipulate distance
 
-Caleidoscope
+Caleidoscope         multiply angle by an integer
 
 
 
 Basic Filters
 
 
-Linear filter
+Linear filter:       multiply brightness by x or y divided by width or height
 
-Radial filter
+Radial filter:       multiply brightness by distance / radius
 
 
 
