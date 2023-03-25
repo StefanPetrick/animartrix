@@ -1,1 +1,9 @@
+25.03.  enabled oscillator offsets by setting timings.offset[i]
+        (can be used to shift the timebase for otherwise identical oscillators)
+        global speed and speed ratios are now accessed by timings.master_speed & timings.ratio[i]    
 
+24.03.  report_performance() shows now rendering time and data transmission time per frame
+        fps counting independent from FastLED now
+
+23.03.  rewrote most code using structs
+        reorganized oscillators: introduced move.linear[i], move.radial[i], move.directional[i], move.noise_angle[i], 
