@@ -2,6 +2,7 @@
         (can be used to shift the timebase for otherwise identical oscillators)
         global speed and speed ratios are now accessed by timings.master_speed & timings.ratio[i]  
         started documentation.txt
+        introduced animation_collection.ino
 
 24.03.  report_performance() shows now rendering time and data transmission time per frame
         fps counting independent from FastLED now
