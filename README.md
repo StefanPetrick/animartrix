@@ -16,7 +16,10 @@ For examples what this code can do check out my Youtube. https://www.youtube.com
 
 --------------------------------------------------------------------------------------------
 
-Thank you for the kind support from Sutaburosu, Antti Yliniemi & Yves Bazin!
+Also have a look at https://www.reddit.com/r/FastLED/ for examples what people have created with it.
+
+
+Thanks for the kind support from Sutaburosu, Antti Yliniemi & Yves Bazin!
 
 
 
