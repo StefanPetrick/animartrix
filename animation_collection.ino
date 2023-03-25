@@ -20,6 +20,10 @@ a = micros();                   // for time measurement in report_performance()
     for (int y = 0; y < num_y; y++) {
   
       // describe and render animation layers
+      animation.scale_x    = 0.1;
+      animation.scale_y    = 0.1;
+      animation.offset_x   = 0;
+      animation.offset_y   = 0;
       animation.angle      = polar_theta[y][x] +  move.radial[0];
       animation.dist       = distance[y][x];
       animation.z          = move.linear[0];
@@ -86,7 +90,13 @@ a = micros();                   // for time measurement in report_performance()
       // describe and render animation layers
       animation.angle      = 3 * polar_theta[y][x] +  move.radial[0] - distance[y][x]/3;
       animation.dist       = distance[y][x];
+      animation.scale_z    = 0.1;  
+      animation.scale_y    = 0.1;
+      animation.scale_x    = 0.1;
       animation.offset_x   = move.linear[0];
+      animation.offset_y   = 0;
+      animation.offset_z   = 0;
+      animation.z          = 0;
       float show1          = render_value(animation);
 
       animation.angle      = 3 * polar_theta[y][x] +  move.radial[1] - distance[y][x]/3;
@@ -106,6 +116,69 @@ a = micros();                   // for time measurement in report_performance()
       pixel.red   = 3*show1 * radial_filter;
       pixel.green = show2 * radial_filter / 2;
       pixel.blue  = show3 * radial_filter / 4;
+
+      pixel = rgb_sanity_check(pixel);
+
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+
+  FastLED.show();
+
+  c = micros(); // for time measurement in report_performance()
+  
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+
+}
+
+
+void Rings() {
+
+a = micros();                   // for time measurement in report_performance()
+
+  timings.master_speed = 0.01;    // speed ratios for the oscillators
+  timings.ratio[0] = 1;         // higher values = faster transitions
+  timings.ratio[1] = 1.1;
+  timings.ratio[2] = 1.2;
+  
+  timings.offset[1] = 100;
+  timings.offset[2] = 200;
+  timings.offset[3] = 300;
+  
+  calculate_oscillators(timings);     // get linear movers and oscillators going
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+  
+      // describe and render animation layers
+      animation.angle      = 5;
+      animation.scale_x    = 0.2;
+      animation.scale_y    = 0.2;
+      animation.scale_z    = 1;
+      animation.dist       = distance[y][x];
+      animation.offset_y   = -move.linear[0];
+      animation.offset_x   = 0;
+      float show1          = render_value(animation);
+
+       // describe and render animation layers
+      animation.angle      = 10;
+      
+      animation.dist       = distance[y][x];
+      animation.offset_y   = -move.linear[1];
+      float show2          = render_value(animation);
+
+       // describe and render animation layers
+      animation.angle      = 12;
+      
+      animation.dist       = distance[y][x];
+      animation.offset_y   = -move.linear[2];
+      float show3          = render_value(animation);
+
+      // colormapping
+      pixel.red   = show1;
+      pixel.green = show2 / 4;
+      pixel.blue  = show3 / 4;
 
       pixel = rgb_sanity_check(pixel);
 

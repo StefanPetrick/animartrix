@@ -18,6 +18,7 @@ float polar_theta[num_x][num_y];        // look-up table for polar angles
 float distance[num_x][num_y];           // look-up table for polar distances
 
 unsigned long a, b, c;                  // for time measurements
+uint8_t n;
 
 struct render_parameters {
 
@@ -84,8 +85,10 @@ void setup() {
 
 void loop() {
 
-  //Rotating_Blob();
   Chasing_Spirals();
-   
+ 
+  //Rotating_Blob();
+  //Rings();
+ 
 } 
 
