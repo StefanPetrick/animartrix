@@ -1,5 +1,6 @@
-ANIMartRIX by Stefan Petrick 2023 - Next Level LED Animations for Teensy 4 + 2D LED Setups     
-                                                              
+ANIMartRIX by Stefan Petrick 2023
+
+Next Level LED Animations for Teensy 4 + 2D LED Setups.     
 This is a Shader & 5D Coordinate Mapper made to render artistic generative visuals.                                                      
 
 -------------------------------------------------------------------------------------------
