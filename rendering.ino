@@ -81,9 +81,9 @@ void write_pixel_to_framebuffer(int x, int y, rgb &pixel) {
 rgb rgb_sanity_check(rgb &pixel) {
 
       // rescue data if possible, return absolute value
-      if (pixel.red < 0)     pixel.red = fabsf(pixel.red);
-      if (pixel.green < 0) pixel.green = fabsf(pixel.green);
-      if (pixel.blue < 0)   pixel.blue = fabsf(pixel.blue);
+      //if (pixel.red < 0)     pixel.red = fabsf(pixel.red);
+      //if (pixel.green < 0) pixel.green = fabsf(pixel.green);
+      //if (pixel.blue < 0)   pixel.blue = fabsf(pixel.blue);
       
       // discard everything above the valid 8 bit colordepth 0-255 range
       if (pixel.red   > 255)   pixel.red = 255;
