@@ -1,10 +1,8 @@
-****************************************************************
 *            ANIMartRIX by Stefan Petrick 2023                 *
 *                                                              *
 *   Next Level LED Animations for Teensy 4 + 2D LED Setups     *
 *                                                              *
-*  A Shader & 5D coordinate Mapper for complex generative art  *
-****************************************************************                                                      
+*  A Shader & 5D coordinate Mapper for complex generative art  *                                                     
 
 
 This code is licenced under a Creative Commons Attribution 
