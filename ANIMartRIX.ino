@@ -85,7 +85,8 @@ void setup() {
 
 void loop() {
 
-  Lava1();
+  Scaledemo1();
+  //Lava1();
   //Caleido3();
   //Caleido2();
   //Caleido1();

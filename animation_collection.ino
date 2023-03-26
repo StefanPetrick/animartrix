@@ -652,3 +652,63 @@ a = micros();                   // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
 
 }
+
+void Scaledemo1() {
+
+a = micros();                   // for time measurement in report_performance()
+
+  timings.master_speed = 0.00003;    // speed ratios for the oscillators
+  timings.ratio[0] = 4;         // higher values = faster transitions
+  timings.ratio[1] = 3.2;
+  timings.ratio[2] = 10;
+  timings.ratio[3] = 0.05;
+  timings.ratio[4] = 0.6;
+  timings.offset[0] = 0;
+  timings.offset[1] = 100;
+  timings.offset[2] = 200;
+  timings.offset[3] = 300;
+  timings.offset[4] = 400;
+  
+  calculate_oscillators(timings);     // get linear movers and oscillators going
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+  
+      // describe and render animation layers
+      animation.dist       = 0.3*distance[x][y] * 0.8;
+      animation.angle      = 3*polar_theta[x][y] + move.radial[2];
+      animation.scale_x    = 0.1 + (move.noise_angle[0])/10;
+      animation.scale_y    = 0.1 + (move.noise_angle[1])/10;// + (move.directional[1] + 2)/100;
+      animation.scale_z    = 0.01;
+      animation.offset_y   = 0;
+      animation.offset_x   = 0;
+      animation.offset_z   = 100*move.linear[0];
+      animation.z          = 30;
+      float show1          = render_value(animation);
+
+      animation.angle      = 3;
+      float show2          = render_value(animation);
+
+      float dist = (10-distance[x][y])/ 10;
+      pixel.red = show1*dist;
+      pixel.green = (show1-show2)*dist*0.3;
+      pixel.blue = (show2-show1)*dist;
+
+      if (distance[x][y] > 8) {
+         pixel.red = 0;
+         pixel.green = 0;
+         pixel.blue = 0;
+
+      }
+      
+      pixel = rgb_sanity_check(pixel);
+
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show();
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+
+}
