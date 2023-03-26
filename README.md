@@ -22,11 +22,11 @@ https://www.youtube.com/@stefanpetrick
 
 --------------------------------------------------------------------------------------------
 
-Also have a look at https://www.reddit.com/r/FastLED/ for examples what people have created with it.
+Also have a look at https://www.reddit.com/r/FastLED/ for examples what early adopters have created with it already.
 
 --------------------------------------------------------------------------------------------
 
-Thanks for the kind support from Sutaburosu, Antti Yliniemi & Yves Bazin!
+A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind and patient support I receive from them!
 
 --------------------------------------------------------------------------------------------
 
