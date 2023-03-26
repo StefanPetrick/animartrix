@@ -11,11 +11,13 @@ The code is licenced under a Creative Commons Attribution License CC BY-NC 3.0
 -------------------------------------------------------------------------------------------
 
 If you would like to support my work I appreciate your kind donation. 
+
 https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
 
 --------------------------------------------------------------------------------------------
 
-For examples what this code can do check out my Youtube. 
+For examples what this code can do check out my Youtube.
+
 https://www.youtube.com/@stefanpetrick
 
 --------------------------------------------------------------------------------------------
