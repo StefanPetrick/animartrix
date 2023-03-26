@@ -28,6 +28,14 @@ Also have a look at https://www.reddit.com/r/FastLED/ for examples what people h
 
 Thanks for the kind support from Sutaburosu, Antti Yliniemi & Yves Bazin!
 
+--------------------------------------------------------------------------------------------
+
+Requirements: FastLED, Teensyduino, Arduino IDE, 
+
+Recommended hardware: any fast FPU microcontroller & lots of programmamble LEDs
+
+A Teensy 4 is ideal. https://www.pjrc.com/store/teensy40.html
+
 
 
 
