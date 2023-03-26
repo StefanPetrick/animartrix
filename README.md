@@ -26,6 +26,10 @@ Also have a look at https://www.reddit.com/r/FastLED/ for examples what early ad
 
 --------------------------------------------------------------------------------------------
 
+My own posts reporting progress can be found here: https://www.reddit.com/user/StefanPetrick/submitted/
+
+--------------------------------------------------------------------------------------------
+
 A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind and patient support I receive from them!
 
 --------------------------------------------------------------------------------------------
