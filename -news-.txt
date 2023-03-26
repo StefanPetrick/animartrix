@@ -1,3 +1,5 @@
+26.03.  added some caleidoscope and lava animations
+
 25.03.  enabled oscillator offsets by setting timings.offset[i]
         (can be used to shift the timebase for otherwise identical oscillators)
         global speed and speed ratios are now accessed by timings.master_speed & timings.ratio[i]  
