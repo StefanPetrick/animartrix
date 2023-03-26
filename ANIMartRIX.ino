@@ -85,10 +85,14 @@ void setup() {
 
 void loop() {
 
-  Chasing_Spirals();
- 
+  Caleido1();
+  //Distance_Experiment();
+  //Center_Field();
+  //Waves();
+  //Chasing_Spirals();
   //Rotating_Blob();
   //Rings();
+  //report_performance();
  
 } 
 
