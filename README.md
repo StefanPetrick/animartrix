@@ -1,6 +1,6 @@
 ANIMartRIX by Stefan Petrick 2023
 
-Next Level LED Animations are here.
+Next level LED animations are here.
 
 This is a Shader & 5D Coordinate Mapper made for rendering artistic generative visuals.                                                      
 
