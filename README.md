@@ -16,9 +16,7 @@ https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
 
 --------------------------------------------------------------------------------------------
 
-For examples what this code can do check out my Youtube.
-
-https://www.youtube.com/@stefanpetrick
+For examples what this code can do check out my Youtube: https://www.youtube.com/@stefanpetrick
 
 --------------------------------------------------------------------------------------------
 
