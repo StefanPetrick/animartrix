@@ -608,10 +608,10 @@ a = micros();                   // for time measurement in report_performance()
     for (int y = 0; y < num_y; y++) {
   
       // describe and render animation layers
-      animation.dist       = distance[x][y];
+      animation.dist       = distance[x][y] * 0.8;
       animation.angle      = polar_theta[x][y];
       animation.scale_x    = 0.15;// + (move.directional[0] + 2)/100;
-      animation.scale_y    = 0.15;// + (move.directional[1] + 2)/100;
+      animation.scale_y    = 0.12;// + (move.directional[1] + 2)/100;
       animation.scale_z    = 0.01;
       animation.offset_y   = -move.linear[0];
       animation.offset_x   = 0;
@@ -620,16 +620,16 @@ a = micros();                   // for time measurement in report_performance()
       float show1          = render_value(animation);
 
       animation.offset_y   = -move.linear[1];
-      animation.scale_x    = 0.1;// + (move.directional[0] + 2)/100;
-      animation.scale_y    = 0.1;// + (move.directional[1] + 2)/100;
+      animation.scale_x    = 0.15;// + (move.directional[0] + 2)/100;
+      animation.scale_y    = 0.12;// + (move.directional[1] + 2)/100;
       animation.offset_x   = show1 / 100;
       animation.offset_y   += show1/100;
      
       float show2          = render_value(animation);
 
       animation.offset_y   = -move.linear[2];
-      animation.scale_x    = 0.1;// + (move.directional[0] + 2)/100;
-      animation.scale_y    = 0.1;// + (move.directional[1] + 2)/100;
+      animation.scale_x    = 0.15;// + (move.directional[0] + 2)/100;
+      animation.scale_y    = 0.12;// + (move.directional[1] + 2)/100;
       animation.offset_x   = show2 / 100;
       animation.offset_y   += show2/100;
      
