@@ -1,16 +1,22 @@
-27.03.  enabled temporal dithering & multiple animations at the same time
-        the visual quality is unreal considering it runs on 8 bit LEDs (3 animations, each 4 layers running together still at >400fps...)
+27.03.  -enabled multiple animations at the same time and temporal dithering for blending them together with outstanding quality
+        -the visual appearence is unreal considering it still runs on 8 bit LEDs 
+         (3 animations, each 4 layers running together still at >400fps...)
+        -it looks satin-smooth but causes a rolling shutter effect on video camera
+        
+        https://www.reddit.com/r/FastLED/comments/123mgng/woohoo_as_a_sideeffect_of_high_framerates/
 
-26.03.  added some caleidoscope and lava animations
+26.03.  -added some caleidoscope and lava animations
 
-25.03.  enabled oscillator offsets by setting timings.offset[i]
-        (can be used to shift the timebase for otherwise identical oscillators)
-        global speed and speed ratios are now accessed by timings.master_speed & timings.ratio[i]  
-        started documentation.txt
-        introduced animation_collection.ino
+        https://www.reddit.com/r/FastLED/comments/122uurn/ill_include_this_animation_when_i_release_the/
 
-24.03.  report_performance() shows now rendering time and data transmission time per frame
-        fps counting independent from FastLED now
+25.03.  -enabled oscillator offsets by setting timings.offset[i]
+         (can be used to shift the timebase for otherwise identical oscillators)
+        -global speed and speed ratios are now accessed by timings.master_speed & timings.ratio[i]  
+        -started documentation.txt
+        -introduced animation_collection.ino
 
-23.03.  rewrote most code using structs
-        reorganized oscillators: introduced move.linear[i], move.radial[i], move.directional[i], move.noise_angle[i], 
+24.03.  -report_performance() shows now rendering time and data transmission time per frame
+         fps counting independent from FastLED now
+
+23.03.  -rewrote most code using structs
+        -reorganized oscillators: introduced move.linear[i], move.radial[i], move.directional[i], move.noise_angle[i], 
