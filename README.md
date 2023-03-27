@@ -1,8 +1,8 @@
 ## ANIMartRIX by Stefan Petrick 2023
 
-### Bringing high quality LED animations to your project.
+#### High quality LED animations for your project.
 
-#### This is a Shader & 5D Coordinate Mapper 
+#### This is a Shader & a 5D Coordinate Mapper 
 #### made for rendering generative actistic visuals.                                                      
 
 -------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ The code is licenced under a Creative Commons Attribution License CC BY-NC 3.0
 
 -------------------------------------------------------------------------------------------
 
-If you would like to support my work I appreciate your kind donation. 
+### If you would like to support my work I appreciate your kind donation. 
 
 https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
 
