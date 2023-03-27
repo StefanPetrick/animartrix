@@ -1,7 +1,7 @@
 27.03.  -enabled multiple animations at the same time and temporal dithering for blending them together with outstanding quality
         -the visual appearence is unreal considering it still runs on 8 bit LEDs 
          (3 animations, each 4 layers running together at >400fps on a Teensy 3.6)
-        -it looks satin-smooth but causes a rolling shutter effect on video camera
+        -be aware: it looks satin-smooth to the human eye, but can cause a rolling shutter effect on video camera
         
         https://www.reddit.com/r/FastLED/comments/123mgng/woohoo_as_a_sideeffect_of_high_framerates/
 
