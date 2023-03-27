@@ -1,4 +1,4 @@
-ANIMartRIX by Stefan Petrick 2023
+##ANIMartRIX by Stefan Petrick 2023
 
 Bringing high quality LED animations to your project.
 
