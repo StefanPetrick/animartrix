@@ -54,3 +54,9 @@ Interesting Techniques
 Cartesian domain warping
 
 Polar domain warping
+
+
+
+Multiple animations at the same time?
+
+Just call them one by one, given enough fps (>100 minimum) the blended result will look awesone
