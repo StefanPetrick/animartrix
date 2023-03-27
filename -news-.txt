@@ -1,4 +1,5 @@
-27.03.
+27.03.  enabled temporal dithering & multiple animations at the same time
+        the visual quality is unreal considering it runs on 8 bit LEDs (3 animations, each 4 layers running together still at >400fps...)
 
 26.03.  added some caleidoscope and lava animations
 
