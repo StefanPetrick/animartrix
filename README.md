@@ -4,12 +4,6 @@
 
 
 
-The code is licenced under a Creative Commons Attribution License CC BY-NC-SA 4.0
-
-https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-
-
 If you would like to support my work I appreciate your kind donation. 
 
 https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
@@ -39,6 +33,11 @@ A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind and pati
 Requirements: FastLED, Teensyduino, Arduino IDE, 
 
 Recommended hardware: any fast FPU microcontroller & lots of programmamble LEDs
+
+The code is licenced under a Creative Commons Attribution License CC BY-NC-SA 4.0
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
 
 A Teensy 4 is ideal. https://www.pjrc.com/store/teensy40.html
 
