@@ -4,9 +4,7 @@
 
 
 
-If you would like to support my work I appreciate your kind donation. 
-
-https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
+If you would like to support my work I appreciate your kind donation. https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
 
 --------------------------------------------------------------------------------------------
 
