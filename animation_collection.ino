@@ -37,12 +37,12 @@ a = micros();                   // for time measurement in report_performance()
       float show2          = render_value(animation);
 
       animation.angle      = polar_theta[x][y] - move.radial[2] + show1/512.0;
-      animation.dist       = distance[y][x] * show1/220.0;
+      animation.dist       = distance[x][y] * show1/220.0;
       animation.z          = move.linear[2];
       float show3          = render_value(animation);
 
       animation.angle      = polar_theta[x][y] - move.radial[3] + show1/512.0;
-      animation.dist       = distance[y][x] * show1/200.0;
+      animation.dist       = distance[x][y] * show1/200.0;
       animation.z          = move.linear[3];
       float show4          = render_value(animation);
 
@@ -88,7 +88,7 @@ a = micros();                   // for time measurement in report_performance()
     for (int y = 0; y < num_y; y++) {
   
       // describe and render animation layers
-      animation.angle      = 3 * polar_theta[x][y] +  move.radial[0] - distance[y][x]/3;
+      animation.angle      = 3 * polar_theta[x][y] +  move.radial[0] - distance[x][y]/3;
       animation.dist       = distance[x][y];
       animation.scale_z    = 0.1;  
       animation.scale_y    = 0.1;
@@ -99,19 +99,19 @@ a = micros();                   // for time measurement in report_performance()
       animation.z          = 0;
       float show1          = render_value(animation);
 
-      animation.angle      = 3 * polar_theta[y][x] +  move.radial[1] - distance[y][x]/3;
+      animation.angle      = 3 * polar_theta[x][y] +  move.radial[1] - distance[x][y]/3;
       animation.dist       = distance[x][y];
       animation.offset_x   = move.linear[1];
       float show2          = render_value(animation);
 
-      animation.angle      = 3 * polar_theta[y][x] +  move.radial[2] - distance[y][x]/3;
+      animation.angle      = 3 * polar_theta[x][y] +  move.radial[2] - distance[x][y]/3;
       animation.dist       = distance[x][y];
       animation.offset_x   = move.linear[2];
       float show3          = render_value(animation);
 
       // colormapping
       float radius = 10;
-      float radial_filter = (radius - distance[y][x]) / radius;
+      float radial_filter = (radius - distance[x][y]) / radius;
 
       pixel.red   = 3*show1 * radial_filter;
       pixel.green = show2 * radial_filter / 2;

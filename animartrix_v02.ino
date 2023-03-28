@@ -85,14 +85,14 @@ void setup() {
 void loop() {
 
   //Yves();
-  //Scaledemo1();
+  Scaledemo1();
   //Lava1();
   //Caleido3();
   //Caleido2();
   //Caleido1();
   //Distance_Experiment();
   //Center_Field();
-  Waves();
+  //Waves();
   //Chasing_Spirals();
   //Rotating_Blob();
   //Rings();
