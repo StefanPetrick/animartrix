@@ -84,7 +84,7 @@ void setup() {
 
 void loop() {
 
-  Yves();
+  //Yves();
   //Scaledemo1();
   //Lava1();
   //Caleido3();
@@ -92,7 +92,7 @@ void loop() {
   //Caleido1();
   //Distance_Experiment();
   //Center_Field();
-  //Waves();
+  Waves();
   //Chasing_Spirals();
   //Rotating_Blob();
   //Rings();
