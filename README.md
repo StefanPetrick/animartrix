@@ -2,6 +2,8 @@
 
 by Stefan Petrick. High quality LED animations for your project. 
 
+![Alt text](relative%20path/to/pic.jpg?raw=true "Title")
+
 
 This is a Shader & a 5D Coordinate Mapper made for rendering artistic visuals & generative animations. 
                                                    
