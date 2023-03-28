@@ -722,21 +722,25 @@ void Yves() {
   timings.ratio[0] = 3;         // higher values = faster transitions
   timings.ratio[1] = 2;
   timings.ratio[2] = 1;
-  timings.ratio[3] = 0.1;
+  timings.ratio[3] = 0.13;
   timings.ratio[4] = 0.15;
+  timings.ratio[5] = 0.03;
+  timings.ratio[6] = 0.025;
   timings.offset[0] = 0;
   timings.offset[1] = 100;
   timings.offset[2] = 200;
   timings.offset[3] = 300;
   timings.offset[4] = 400;
+  timings.offset[5] = 500;
+  timings.offset[6] = 600;
   
   calculate_oscillators(timings);     // get linear movers and oscillators going
 
   for (int x = 0; x < num_x; x++) {
     for (int y = 0; y < num_y; y++) {
       
-      animation.dist       = distance[x][y];
-      animation.angle      = polar_theta[x][y];
+      animation.dist       = distance[x][y] ;
+      animation.angle      = polar_theta[x][y] + 2*PI + move.noise_angle[5];
       animation.scale_x    = 0.1;
       animation.scale_y    = 0.1;
       animation.scale_z    = 0.1;
@@ -747,7 +751,7 @@ void Yves() {
       float show1          = render_value(animation);
 
       animation.dist       = distance[x][y];
-      animation.angle      = polar_theta[x][y];
+      animation.angle      = polar_theta[x][y] + 2*PI + move.noise_angle[6];;
       animation.scale_x    = 0.1;
       animation.scale_y    = 0.1;
       animation.scale_z    = 0.1;
@@ -758,11 +762,11 @@ void Yves() {
       float show2          = render_value(animation);
 
       animation.angle      = polar_theta[x][y] + show1/100 + move.noise_angle[3] + move.noise_angle[4];
-      animation.dist       = distance[x][y] + show2/100;
+      animation.dist       = distance[x][y] + show2/50;
       animation.offset_y   = -move.linear[2];
 
-      animation.offset_y   += show1/50;
-      animation.offset_x   += show2/50;
+      animation.offset_y   += show1/100;
+      animation.offset_x   += show2/100;
 
       float show3          = render_value(animation);
 
