@@ -5,11 +5,12 @@
 #### This is a Shader & a 5D Coordinate Mapper 
 #### made for rendering generative actistic visuals.                                                      
 
--------------------------------------------------------------------------------------------
 
-The code is licenced under a Creative Commons Attribution License CC BY-NC 3.0
+The code is licenced under a Creative Commons Attribution License CC BY-NC-SA 4.0
 
--------------------------------------------------------------------------------------------
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+
 
 If you would like to support my work I appreciate your kind donation. 
 
