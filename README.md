@@ -17,6 +17,10 @@ https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS
 
 --------------------------------------------------------------------------------------------
 
+Install all files in one folder and run animartrix_v02.ino
+
+--------------------------------------------------------------------------------------------
+
 For examples what this code can do check out my Youtube: https://www.youtube.com/@stefanpetrick
 
 --------------------------------------------------------------------------------------------
