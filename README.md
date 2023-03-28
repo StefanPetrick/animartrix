@@ -24,19 +24,19 @@ Install all files in one folder and run animartrix_v02.ino
 
 For examples what this code can do check out my Youtube: https://www.youtube.com/@stefanpetrick
 
---------------------------------------------------------------------------------------------
+
 
 Also have a look at https://www.reddit.com/r/FastLED/ for examples what early adopters have created with it already.
 
---------------------------------------------------------------------------------------------
+
 
 My own posts reporting progress can be found here: https://www.reddit.com/user/StefanPetrick/submitted/
 
---------------------------------------------------------------------------------------------
+
 
 A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind and patient support I receive from them!
 
---------------------------------------------------------------------------------------------
+
 
 Requirements: FastLED, Teensyduino, Arduino IDE, 
 
