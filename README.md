@@ -20,11 +20,11 @@ __Info for Early Adopters: Install *.ino in one folder and run animartrix_v02.in
 
 --------------------------------------------------------------------------------------------
 
-For examples what this code can do check out my Youtube: https://www.youtube.com/@stefanpetrick
+For examples what this code can do have a look at my [Youtube Channel](https://www.youtube.com/@stefanpetrick).
 
 
 
-My own posts reporting development progress can be found here: https://www.reddit.com/user/StefanPetrick/submitted/
+My own posts reporting development progress can be found [here on Reddit](https://www.reddit.com/user/StefanPetrick/submitted/)
 
 
 
@@ -50,12 +50,10 @@ Recommended hardware:
 
 Any fast FPU microcontroller & lots of programmamble LEDs
 
-For best results use a Teensy 4: https://www.pjrc.com/store/teensy40.html
+For best results use a [Teensy 4](https://www.pjrc.com/store/teensy40.html)
 
 
-The code and animations are licenced under a Creative Commons Attribution License CC BY-NC-SA 4.0
-
-https://creativecommons.org/licenses/by-nc-sa/4.0/
+The code and animations are licenced under a [Creative Commons Attribution License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 
