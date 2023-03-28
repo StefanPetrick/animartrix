@@ -707,8 +707,57 @@ a = micros();                   // for time measurement in report_performance()
     }
   }
   b = micros(); // for time measurement in report_performance()
-  FastLED.show();
+  FastLED.show(); 
   c = micros(); // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
 
+}
+
+
+void New_template() {
+
+  a = micros();                   // for time measurement in report_performance()
+
+  timings.master_speed = 0.00003;    // speed ratios for the oscillators
+  timings.ratio[0] = 4;         // higher values = faster transitions
+  timings.ratio[1] = 3.2;
+  timings.ratio[2] = 10;
+  timings.ratio[3] = 0.05;
+  timings.ratio[4] = 0.6;
+  timings.offset[0] = 0;
+  timings.offset[1] = 100;
+  timings.offset[2] = 200;
+  timings.offset[3] = 300;
+  timings.offset[4] = 400;
+  
+  calculate_oscillators(timings);     // get linear movers and oscillators going
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y];
+      animation.angle      = polar_theta[x][y];
+      animation.scale_x    = 0.1;
+      animation.scale_y    = 0.1;
+      animation.scale_z    = 0.1;
+      animation.offset_y   = 0;
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      animation.z          = 0;
+      float show1          = render_value(animation);
+
+      float show2          = render_value(animation);
+     
+      pixel.red   = show1;
+      pixel.green = show2;
+      pixel.blue  = 0;
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
 }
