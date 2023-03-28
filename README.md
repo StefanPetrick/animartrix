@@ -34,14 +34,11 @@ A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind support!
 
 Required software: 
 
-Arduino IDE
-https://www.arduino.cc/en/software
+[Arduino IDE](https://www.arduino.cc/en/software)
 
-Teensyduino
-https://www.pjrc.com/teensy/td_download.html
+[Teensyduino](https://www.pjrc.com/teensy/td_download.html)
 
-FastLED
-https://github.com/FastLED/FastLED
+[FastLED](https://github.com/FastLED/FastLED)
 
 
 
