@@ -714,16 +714,16 @@ a = micros();                   // for time measurement in report_performance()
 }
 
 
-void New_template() {
+void Yves() {
 
   a = micros();                   // for time measurement in report_performance()
 
-  timings.master_speed = 0.00003;    // speed ratios for the oscillators
-  timings.ratio[0] = 4;         // higher values = faster transitions
-  timings.ratio[1] = 3.2;
-  timings.ratio[2] = 10;
-  timings.ratio[3] = 0.05;
-  timings.ratio[4] = 0.6;
+  timings.master_speed = 0.001;    // speed ratios for the oscillators
+  timings.ratio[0] = 3;         // higher values = faster transitions
+  timings.ratio[1] = 2;
+  timings.ratio[2] = 1;
+  timings.ratio[3] = 0.1;
+  timings.ratio[4] = 0.15;
   timings.offset[0] = 0;
   timings.offset[1] = 100;
   timings.offset[2] = 200;
@@ -740,16 +740,40 @@ void New_template() {
       animation.scale_x    = 0.1;
       animation.scale_y    = 0.1;
       animation.scale_z    = 0.1;
-      animation.offset_y   = 0;
+      animation.offset_y   = -move.linear[0];
       animation.offset_x   = 0;
       animation.offset_z   = 0;
       animation.z          = 0;
       float show1          = render_value(animation);
 
+      animation.dist       = distance[x][y];
+      animation.angle      = polar_theta[x][y];
+      animation.scale_x    = 0.1;
+      animation.scale_y    = 0.1;
+      animation.scale_z    = 0.1;
+      animation.offset_y   = -move.linear[1];
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      animation.z          = 0;
       float show2          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + show1/100 + move.noise_angle[3] + move.noise_angle[4];
+      animation.dist       = distance[x][y] + show2/100;
+      animation.offset_y   = -move.linear[2];
+
+      animation.offset_y   += show1/50;
+      animation.offset_x   += show2/50;
+
+      float show3          = render_value(animation);
+
+      animation.offset_y   = 0;
+      animation.offset_x   = 0;
+
+      float show4          = render_value(animation);
+      
      
-      pixel.red   = show1;
-      pixel.green = show2;
+      pixel.red   = show3;
+      pixel.green = show3*show4/255;
       pixel.blue  = 0;
       
       pixel = rgb_sanity_check(pixel);

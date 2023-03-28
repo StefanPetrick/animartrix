@@ -84,7 +84,7 @@ void setup() {
 
 void loop() {
 
-  //New_template();
+  Yves();
   //Scaledemo1();
   //Lava1();
   //Caleido3();
@@ -94,7 +94,7 @@ void loop() {
   //Center_Field();
   //Waves();
   //Chasing_Spirals();
-  Rotating_Blob();
+  //Rotating_Blob();
   //Rings();
 } 
 
