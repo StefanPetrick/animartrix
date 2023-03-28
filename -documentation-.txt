@@ -1,3 +1,11 @@
+Copy all files in one folder and run
+
+animartrix_v02.ino
+
+
+
+
+
 Basic Transitions
 
 
