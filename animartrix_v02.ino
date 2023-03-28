@@ -35,7 +35,7 @@ struct render_parameters {
 
 render_parameters animation;     // all animation parameters in one place
 
-#define num_oscillators 5
+#define num_oscillators 10
 
 struct oscillators {
 
