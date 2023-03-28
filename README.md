@@ -2,10 +2,12 @@
 
 by Stefan Petrick. High quality LED animations for your project. 
 
-![Alt text](relative%20path/to/pic.jpg?raw=true "Title")
-
-
 This is a Shader & a 5D Coordinate Mapper made for rendering artistic visuals & generative animations. 
+
+![Screenshot](pic.png)
+
+
+
                                                    
 
 
@@ -14,7 +16,7 @@ f you would like to support my work [I welcome your kind donation](https://www.p
 
 --------------------------------------------------------------------------------------------
 
-Install all files in one folder and run animartrix_v02.ino
+__Info for Early Adopters: Install *.ino in one folder and run animartrix_v02.ino__
 
 --------------------------------------------------------------------------------------------
 
