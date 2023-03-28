@@ -28,11 +28,17 @@ A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind and pati
 
 
 
-Requirements: FastLED, Teensyduino, Arduino IDE
+Requirements: 
 
-Recommended hardware: any fast FPU microcontroller & lots of programmamble LEDs, ideally a Teensy 4: https://www.pjrc.com/store/teensy40.html
+FastLED     https://github.com/FastLED/FastLED
+Teensyduino https://www.pjrc.com/teensy/td_download.html
+Arduino IDE https://www.arduino.cc/en/software
 
-The code is licenced under a Creative Commons Attribution License CC BY-NC-SA 4.0
+Recommended hardware: 
+
+any fast FPU microcontroller & lots of programmamble LEDs, ideally a Teensy 4: https://www.pjrc.com/store/teensy40.html
+
+The code and animations are licenced under a Creative Commons Attribution License CC BY-NC-SA 4.0
 
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 
