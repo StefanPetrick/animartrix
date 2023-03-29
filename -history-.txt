@@ -1,4 +1,5 @@
 29.03.  -testing the FastNoiseLite library https://github.com/Auburn/FastNoiseLite
+        -lens: distance * distamce and scale/zoom in
 
 28.03.  -cleanup, bugfixes, Yves() & Spiralus() animations, documentation
 
