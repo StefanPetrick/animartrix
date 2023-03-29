@@ -1,3 +1,5 @@
+29.03.  -testing the FastNoiseLite library https://github.com/Auburn/FastNoiseLite
+
 28.03.  -cleanup, bugfixes, Yves() & Spiralus() animations, documentation
 
 27.03.  -enabled multiple animations at the same time and temporal dithering for blending them together with outstanding quality
