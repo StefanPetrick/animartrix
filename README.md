@@ -58,9 +58,15 @@ For best results use a [Teensy 4](https://www.pjrc.com/store/teensy40.html)
 Also better have a beefy power supply for the LEDs - the code has no brightness or current limit in place - better be prepared to supply all LEDs going full white at once.
 
 
+## License
+
+The code and specifically the animations that come with it are licenced under a [Creative Commons Attribution License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+For non-commercial purposes you're welcome to use the code and animations in any way you like.
+
+In case you would like to use my code or animations in your commercial project or product just contact me and we'll find a fair licensing solution we're both happy with. I love and enjoy to create win-win situations.
 
 
-The animations that come with is code are licenced under a [Creative Commons Attribution License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 
