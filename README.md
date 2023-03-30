@@ -8,7 +8,7 @@ It enables high framerate FPU rendering and up to 32 bit color depth per RGB cha
 
 96 bit color resolution is ready to be used in your next cutting edge art installation or project. 
 
-In case you find my work useful & you would like to say thank you [I happily welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
+In case you find my work useful and you would like to say thank you [I happily welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
 Would you like to use my code or animations in your commercial product or project? Great, please reach out to me and together we'll find a fair licensing solution we're both happy with!
 
@@ -51,7 +51,7 @@ A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind support!
 
 ## Recommended Hardware: 
 
-Any fast FPU microcontroller & lots of programmamble LEDs.
+Any fast FPU microcontroller and lots of programmamble LEDs.
 
 For best results use a [Teensy 4](https://www.pjrc.com/store/teensy40.html)
 
