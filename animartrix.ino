@@ -84,7 +84,8 @@ void setup() {
 
 void loop() {
 
-  Zoom();
+  Zoom2();
+  //Zoom();
   //Hot_Blob();
   //Spiralus2();
   //Spiralus();

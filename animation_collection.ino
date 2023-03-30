@@ -1005,7 +1005,7 @@ void Zoom() { // nice one
       float show1          = render_value(animation);
 
     
-
+      /*
       animation.offset_x   = 0;
       animation.offset_y   = -move.linear[0]/2;
       animation.low_limit  = 0;
@@ -1015,11 +1015,52 @@ void Zoom() { // nice one
 
       float radius = 11;   // radius of a radial brightness filter
       float radial = (radius-distance[x][y])/distance[x][y];
-
+      */
       float linear = (y+1)/(num_y-1.f);
       
       pixel.red   = show1*linear;
       pixel.green   = 0;
+      
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+void Zoom2() { // nice one
+
+  a = micros();                   
+
+  run_default_oscillators();
+  timings.master_speed = 0.0005;
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = (distance[x][y] * distance[x][y]) * 1.5*(move.directional[0]+1.1);
+      animation.angle      = polar_theta[x][y] + move.radial[0];
+      
+      animation.scale_x    = 0.01;
+      animation.scale_y    = 0.01;
+      
+      animation.offset_y   = -20*move.linear[0];
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      
+      animation.z          = 0;
+      animation.low_limit  = 0;
+      float show1          = render_value(animation);
+
+    
+      
+      pixel.red   = show1;
+      pixel.green   = show1/10;
       
       
       pixel = rgb_sanity_check(pixel);
