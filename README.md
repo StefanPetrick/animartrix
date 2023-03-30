@@ -2,7 +2,7 @@
 
 by Stefan Petrick. High quality LED animations for your project. 
 
-This is a Shader & a 5D Coordinate Mapper made for rendering artistic visuals & generative animations. 
+This is a Shader & a 5D Coordinate Mapper made for rendering generative animations & artistic visuals. 
 
 ![Screenshot](pic.png)
 
@@ -11,8 +11,7 @@ This is a Shader & a 5D Coordinate Mapper made for rendering artistic visuals & 
                                                    
 
 
-
-If you would like to support my work [I welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
+If you find my work useful & you'd like to say thank you [I welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
 --------------------------------------------------------------------------------------------
 
@@ -32,7 +31,7 @@ A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind support!
 
 
 
-Required software: 
+## Required Software: 
 
 [Arduino IDE](https://www.arduino.cc/en/software)
 
@@ -43,13 +42,15 @@ Required software:
 
 
 
-Recommended hardware: 
+## Recommended Hardware: 
 
 Any fast FPU microcontroller & lots of programmamble LEDs.
 
-A beefy power supply for the LEDs - the code has no brightness or current limit in place - better be prepared to supply all LEDs going full white at one.
-
 For best results use a [Teensy 4](https://www.pjrc.com/store/teensy40.html)
+
+Also better have a beefy power supply for the LEDs - the code has no brightness or current limit in place - better be prepared to supply all LEDs going full white at once.
+
+
 
 
 The animations that come with is code are licenced under a [Creative Commons Attribution License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
