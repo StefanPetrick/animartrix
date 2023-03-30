@@ -29,11 +29,15 @@ set up one call standard oscillators
 set up one call "blank" template for shorter animation code
 set up write_pixel(show1, show2, show3);
 
+formating readme
+
+idle light routine (>=min brightnes)
+
 */
 
 void run_default_oscillators(){
 
-  timings.master_speed = 0.01;    // master speed
+  timings.master_speed = 0.005;    // master speed
 
   timings.ratio[0] = 1;           // speed ratios for the oscillators, higher values = faster transitions
   timings.ratio[1] = 2;

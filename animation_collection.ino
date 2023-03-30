@@ -789,3 +789,245 @@ void Yves() {
   c = micros(); // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
 }
+
+void Spiralus() {
+
+  a = micros();                   // for time measurement in report_performance()
+
+  timings.master_speed = 0.0011;    // speed ratios for the oscillators
+  timings.ratio[0] = 1.5;         // higher values = faster transitions
+  timings.ratio[1] = 2.3;
+  timings.ratio[2] = 3;
+  timings.ratio[3] = 0.05;
+  timings.ratio[4] = 0.2;
+  timings.ratio[5] = 0.03;
+  timings.ratio[6] = 0.025;
+  timings.ratio[7] = 0.021;
+  timings.ratio[8] = 0.027;
+  timings.offset[0] = 0;
+  timings.offset[1] = 100;
+  timings.offset[2] = 200;
+  timings.offset[3] = 300;
+  timings.offset[4] = 400;
+  timings.offset[5] = 500;
+  timings.offset[6] = 600;
+  
+  calculate_oscillators(timings);     // get linear movers and oscillators going
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] ;
+      animation.angle      = 2*polar_theta[x][y] + move.noise_angle[5] + move.directional[3] * move.noise_angle[6]* animation.dist/10;
+      animation.scale_x    = 0.08;
+      animation.scale_y    = 0.08;
+      animation.scale_z    = 0.02;
+      animation.offset_y   = -move.linear[0];
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      animation.z          = move.linear[1];
+      float show1          = render_value(animation);
+
+      animation.angle      = 2*polar_theta[x][y] + move.noise_angle[7] + move.directional[5] * move.noise_angle[8]* animation.dist/10;
+      animation.offset_y   = -move.linear[1];
+      animation.z          = move.linear[2];
+            
+      float show2          = render_value(animation);
+
+      animation.angle      = 2*polar_theta[x][y] + move.noise_angle[6] + move.directional[6] * move.noise_angle[7]* animation.dist/10;
+      animation.offset_y   = move.linear[2];
+      animation.z          = move.linear[0];
+      float show3          = render_value(animation);
+      
+      
+      float f =  (20-distance[x][y])/20;
+     
+      pixel.red   = f*(show1+show2);
+      pixel.green = f*(show1-show2);
+      pixel.blue  = f*(show3-show1);
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+void Spiralus2() {
+
+  a = micros();                   // for time measurement in report_performance()
+
+  timings.master_speed = 0.0011;    // speed ratios for the oscillators
+  timings.ratio[0] = 1.5;         // higher values = faster transitions
+  timings.ratio[1] = 2.3;
+  timings.ratio[2] = 3;
+  timings.ratio[3] = 0.05;
+  timings.ratio[4] = 0.2;
+  timings.ratio[5] = 0.03;
+  timings.ratio[6] = 0.025;
+  timings.ratio[7] = 0.021;
+  timings.ratio[8] = 0.027;
+  timings.offset[0] = 0;
+  timings.offset[1] = 100;
+  timings.offset[2] = 200;
+  timings.offset[3] = 300;
+  timings.offset[4] = 400;
+  timings.offset[5] = 500;
+  timings.offset[6] = 600;
+  
+  calculate_oscillators(timings);     // get linear movers and oscillators going
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] ;
+      animation.angle      = 2*polar_theta[x][y] + move.noise_angle[5] + move.directional[3] * move.noise_angle[6]* animation.dist/10;
+      animation.scale_x    = 0.08;
+      animation.scale_y    = 0.08;
+      animation.scale_z    = 0.02;
+      animation.offset_y   = -move.linear[0];
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      animation.z          = move.linear[1];
+      float show1          = render_value(animation);
+
+      animation.angle      = 3*polar_theta[x][y] + move.noise_angle[7] + move.directional[5] * move.noise_angle[8]* animation.dist/10;
+      animation.offset_y   = -move.linear[1];
+      animation.z          = move.linear[2];
+            
+      float show2          = render_value(animation);
+
+      animation.angle      = 4*polar_theta[x][y] + move.noise_angle[6] + move.directional[6] * move.noise_angle[7]* animation.dist/10;
+      animation.offset_y   = move.linear[2];
+      animation.z          = move.linear[0];
+      animation.dist       = distance[x][y] *0.8;
+      float show3          = render_value(animation);
+      
+      
+      float f =  (20-distance[x][y])/20;
+     
+      pixel.red   = f*(show1+show2);
+      pixel.green = f*(show1-show2);
+      pixel.blue  = f*(show3-show1);
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+
+void Hot_Blob() { // nice one
+
+  a = micros();                   
+
+  run_default_oscillators();
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] ;
+      animation.angle      = polar_theta[x][y];
+      
+      animation.scale_x    = 0.07 + move.directional[0]*0.002;
+      animation.scale_y    = 0.07;
+      
+      animation.offset_y   = -move.linear[0];
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      
+      animation.z          = 0;
+      animation.low_limit  = -1;
+      float show1          = render_value(animation);
+
+      animation.offset_y   = -move.linear[1];
+      float show3          = render_value(animation);
+
+      animation.offset_x   = show3/20;
+      animation.offset_y   = -move.linear[0]/2 + show1/70;
+      animation.low_limit  = 0;
+      float show2          = render_value(animation);
+
+      animation.offset_x   = show3/20;
+      animation.offset_y   = -move.linear[0]/2 + show1/70;
+      animation.z          = 100;
+      float show4          = render_value(animation);
+
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-animation.dist)/animation.dist;
+
+      float linear = (y+1)/(num_y-1.f);
+      
+      pixel.red   = radial  * show2;
+      pixel.green   = linear * radial* 0.3* (show2-show4);
+      
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+void Zoom() { // nice one
+
+  a = micros();                   
+
+  run_default_oscillators();
+  timings.master_speed = 0.003;
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] * distance[x][y];
+      animation.angle      = polar_theta[x][y];
+      
+      animation.scale_x    = 0.01;
+      animation.scale_y    = 0.01;
+      
+      animation.offset_y   = -10*move.linear[0];
+      animation.offset_x   = 0;
+      animation.offset_z   = 0;
+      
+      animation.z          = 0;
+      animation.low_limit  = 0;
+      float show1          = render_value(animation);
+
+    
+
+      animation.offset_x   = 0;
+      animation.offset_y   = -move.linear[0]/2;
+      animation.low_limit  = 0;
+      float show2          = render_value(animation);
+
+     
+
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-distance[x][y])/distance[x][y];
+
+      float linear = (y+1)/(num_y-1.f);
+      
+      pixel.red   = show1*linear;
+      pixel.green   = 0;
+      
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
