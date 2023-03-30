@@ -8,6 +8,8 @@ It enables high framerate FPU rendering and up to 32 bit color depth per RGB cha
 
 96 bit color resolution is ready to be used in your next cutting edge art project or installation. 
 
+If you find my work useful & you'd like to say thank you [I happily welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
+
 Want to license my animations for commercial use? Contact me, we will find a solution we're both happy with!
 
 ![Screenshot](pic.png)
@@ -17,7 +19,6 @@ Want to license my animations for commercial use? Contact me, we will find a sol
                                                    
 
 
-If you find my work useful & you'd like to say thank you [I welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
 --------------------------------------------------------------------------------------------
 
