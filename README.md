@@ -2,9 +2,13 @@
 
 by Stefan Petrick. High quality LED animations for your project. 
 
-This is a Shader & 5D Coordinate Mapper made for the realtime rendering of generative animations & artistic visuals.
+This is a Shader & 5D Coordinate Mapper made for realtime rendering of generative animations & artistic visuals.
 
-It enables high framerate FPU rendering and up to 32 bit color depth per RGB chanel for outstanding visual quality.
+It enables high framerate FPU rendering and up to 32 bit color depth per RGB chanel for outstanding visual quality and dynamic range.
+
+96 bit color resolution is ready to be used in your next cutting edge art project or installation. 
+
+Want to license my animations for commercial use? Contact me, we will find a solution we're both happy with!
 
 ![Screenshot](pic.png)
 
