@@ -10,7 +10,7 @@ It enables high framerate FPU rendering and up to 32 bit color depth per RGB cha
 
 In case you find my work useful & you'd like to say thank you [I happily welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
-Would you like to use my animations in your commercial project? Great, just contact me and we'll find a fair licensing solution we're both happy with!
+Would you like to use my code or animations in your commercial product or project? Great, just reach out to me and together we'll find a fair licensing solution we're both happy with!
 
 ![Screenshot](pic.png)
 
