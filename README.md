@@ -16,7 +16,7 @@ f you would like to support my work [I welcome your kind donation](https://www.p
 
 --------------------------------------------------------------------------------------------
 
-__Info for Early Adopters: Install *.ino in one folder and run animartrix_v02.ino__
+__Info for Early Adopters: Install *.ino in one folder and run animartrix.ino__
 
 --------------------------------------------------------------------------------------------
 
