@@ -12,7 +12,7 @@ This is a Shader & a 5D Coordinate Mapper made for rendering artistic visuals & 
 
 
 
-f you would like to support my work [I welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
+If you would like to support my work [I welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
 --------------------------------------------------------------------------------------------
 
@@ -45,12 +45,14 @@ Required software:
 
 Recommended hardware: 
 
-Any fast FPU microcontroller & lots of programmamble LEDs
+Any fast FPU microcontroller & lots of programmamble LEDs.
+
+A beefy power supply for the LEDs - the code has no brightness or current limit in place - better be prepared to supply all LEDs going full white at one.
 
 For best results use a [Teensy 4](https://www.pjrc.com/store/teensy40.html)
 
 
-The code and animations are licenced under a [Creative Commons Attribution License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+The animations that come with is code are licenced under a [Creative Commons Attribution License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 
