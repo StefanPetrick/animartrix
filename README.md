@@ -1,6 +1,6 @@
 # AnimARTrix
 
-by Stefan Petrick. High quality LED animations for your project. 
+by Stefan Petrick. Cutting edge LED animations for your project. 
 
 This is a Shader and 5D Coordinate Mapper made for realtime rendering of generative animations & artistic dynamic visuals.
 
