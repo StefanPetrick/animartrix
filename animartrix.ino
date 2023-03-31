@@ -73,7 +73,9 @@ void setup() {
   Serial.begin(115200);                 // check serial monitor for current fps count
   
   // FastLED.addLeds<NEOPIXEL, 13>(leds, NUM_LEDS);
-  FastLED.addLeds<APA102, 11, 13, BGR, DATA_RATE_MHZ(12)>(leds, NUM_LEDS);    
+  FastLED.addLeds<APA102, 11, 13, BGR, DATA_RATE_MHZ(12)>(leds, NUM_LEDS);   
+
+  //FastLED.setMaxPowerInVoltsAndMilliamps( 5, 2000); // optional current limiting [5V, 2000mA] 
  
   render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
                                                                             // polar origin is set to matrix centre
@@ -84,7 +86,8 @@ void setup() {
 
 void loop() {
 
-  Zoom2();
+  Sq();
+  //Zoom2();
   //Zoom();
   //Hot_Blob();
   //Spiralus2();
