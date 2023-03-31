@@ -1,3 +1,6 @@
+31.03. RGB_Blobn() animations, some videos reporting the ongoing development
+       https://www.youtube.com/@stefanpetrick/videos?view=0&sort=dd&shelf_id=0
+
 29.03.  -testing the FastNoiseLite library https://github.com/Auburn/FastNoiseLite
         -lens: distance * distamce and scale/zoom in
 
