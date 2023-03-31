@@ -1,12 +1,14 @@
 # AnimARTrix
 
-by Stefan Petrick. Cutting edge LED animations for your project. 
+by Stefan Petrick 2023. 
 
-This is a Shader and 5D Coordinate Mapper made for realtime rendering of generative animations & artistic dynamic visuals.
+Cutting edge LED animations for your project.
 
-It enables high framerate FPU rendering and up to 32 bit color depth per RGB chanel for outstanding visual quality and dynamic range.
+This is a Shader and 5D Coordinate Mapper made for realtime rendering of generative animations & artistic dynamic visuals. This is also a modular animation synthesizer with waveform generators, oscillators, filters, modulators, noise generators, compressors... and much more. 
 
-96 bit color resolution is ready to be used in your next cutting edge art installation or project. 
+This software enables high framerate FPU rendering and up to 32 bit color depth per RGB chanel for outstanding visual quality and dynamic range.
+
+96 bit color resolution is ready to be used in your next level art installation or visual project. 
 
 In case you find my work useful and you would like to say thank you [I happily welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
