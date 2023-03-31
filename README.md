@@ -12,7 +12,9 @@ This software enables high framerate FPU rendering and up to 32 bit color depth 
 
 In case you find my work useful and you would like to say thank you [I happily welcome your kind donation](https://www.paypal.com/donate/?hosted_button_id=YR7Q795MYU9HS).
 
-Would you like to use my code or animations in your commercial product or project? Great, please reach out to me and together we'll find a fair licensing solution we're both happy with!
+Would you like to use my code or animations in your commercial product or project? 
+
+Great, please reach out to me and together we'll find a fair licensing solution we're both happy with!
 
 ![Screenshot](pic.png)
 
