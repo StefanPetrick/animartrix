@@ -2,7 +2,7 @@
 
 by Stefan Petrick 2023. 
 
-High quality LED animations for your project.
+High quality LED animations for your next project.
 
 This is a Shader and 5D Coordinate Mapper made for realtime rendering of generative animations & artistic dynamic visuals. This is also a modular animation synthesizer with waveform generators, oscillators, filters, modulators, noise generators, compressors... and much more. 
 
