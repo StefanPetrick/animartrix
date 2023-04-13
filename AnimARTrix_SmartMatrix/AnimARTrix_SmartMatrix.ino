@@ -128,9 +128,13 @@ void setup() {
 
 void loop() {
 
+  //SM8();                  // careful: flashy rings
+  //SM7();                  // wild red yellow hypnotizer
+  SM6();                    // red + blue, pretty and beautiful one, my favourite so far
+  //SM5();                  // nice colorful roto blobs
   //SM4();                  // layer merge test
   //SM3();                  // cartesian domain warping
-  SM2();                  // roro zoom
+  //SM2();                  // roro zoom
   //SM1();                  // copy caleido
   //Big_Caleido();          // 5/6 Kaleido + rings
   //RGB_Blobs5();           // sqrtf dist
