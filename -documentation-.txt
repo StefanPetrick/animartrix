@@ -1,13 +1,10 @@
 Copy all files in one folder and run
 
-animartrix_v02.ino
+animartrix_v02.ino     (FastLED version) or
+animartrix_smartmatrix (SmartMatrix version)
 
 
-
-
-
-Basic Transitions
-
+Basic Transitions:
 
 Scroll along x, y, z:       animation.offset_x, offset_y, offset_z
 
@@ -21,9 +18,7 @@ Shift one dimension:        animation.offset_x, offset_y, offset_z;
 
 
 
-
-Basic Animation Building Blocks
-
+Basic Animation Building Blocks:
 
 Spiral:              change angle depending on distance
 
@@ -39,16 +34,17 @@ Caleidoscope         multiply angle by an integer
 
 
 
-Basic Filters
-
+Basic Filters:
 
 Linear filter:       multiply brightness by x or y divided by width or height
 
 Radial filter:       multiply brightness by distance / radius
 
+check merge_methods.ino
 
 
-Basic Color Mappings
+
+Basic Color Mappings:
 
 RGB
 
@@ -56,8 +52,7 @@ Add, subtract, multiply, filter mask, average
 
 
 
-Interesting Techniques
-
+Interesting Techniques:
 
 Cartesian domain warping
 
@@ -65,6 +60,3 @@ Polar domain warping
 
 
 
-Multiple animations at the same time?
-
-Just call them one by one, given enough fps (>100 minimum) the blended result will look awesone
