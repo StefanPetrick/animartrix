@@ -128,9 +128,16 @@ void setup() {
 
 void loop() {
 
+  //Complex_Kaleido_5();     // interference pattern
+  //Complex_Kaleido_4();      // colorful slow mandala
+  //Complex_Kaleido_3();
+  //Complex_Kaleido_2();   // hypnotic smooth
+  //Complex_Kaleido();
+  //SM10();                    // like 9 but fire colors
+  //SM9();                    // polar domain warping
   //SM8();                  // careful: flashy rings
-  //SM7();                  // wild red yellow hypnotizer
-  SM6();                    // red + blue, pretty and beautiful one, my favourite so far
+  //SM7();                  // wild rings
+  //SM6();                    // red + blue, pretty and beautiful one, my favourite so far
   //SM5();                  // nice colorful roto blobs
   //SM4();                  // layer merge test
   //SM3();                  // cartesian domain warping
@@ -150,7 +157,7 @@ void loop() {
   //Spiralus();             // *2
   //Yves();                 // red warpings
   //Scaledemo1();           // *3 + ring red blue
-  //Lava1();                // slow ambilight
+  Lava1();                // slow ambilight
   //Caleido3();             // roto
   //Caleido2();             // roto *2
   //Caleido1();             // star like

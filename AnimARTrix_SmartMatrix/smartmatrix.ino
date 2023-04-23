@@ -44,4 +44,5 @@ void report_performance() {
   Serial.print(round(calc));                 Serial.print(" + ");
   Serial.print(round(push));                 Serial.print(" µs)  Core-temp: ");
   Serial.print( tempmonGetTemp() );          Serial.println(" °C");
+ 
 }
