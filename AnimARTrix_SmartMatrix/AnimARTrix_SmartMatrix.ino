@@ -17,7 +17,7 @@ This is also a modular animation synthesizer with waveform
 generators, oscillators, filters, modulators, noise generators, 
 compressors... and much more.
 
-VO.3 preview version
+VO.42 preview version
  
 This code is licenced under a Creative Commons Attribution 
 License CC BY-NC 3.0
