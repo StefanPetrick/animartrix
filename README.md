@@ -16,7 +16,7 @@ Would you like to use my code or animations in your commercial product or projec
 
 Great, please reach out to me and together we'll find a fair licensing solution we're both happy with!
 
-![Screenshot](pic.png)
+![Screenshot](pic.jpeg)
 
 
 
