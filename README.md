@@ -26,7 +26,7 @@ Great, please reach out to me and together we'll find a fair licensing solution 
 
 --------------------------------------------------------------------------------------------
 
-__Info for Early Adopters: Install *.ino in one folder and run animartrix.ino__
+Installation: Unzip and install all .ino files in one folder and run animartrix.ino
 
 --------------------------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ My own posts reporting development progress can be found [here on Reddit](https:
 
 
 
-A big thank you to Sutaburosu, Antti Yliniemi & Yves Bazin for the kind support!
+A big thank you to Sutaburosu, Antti Yliniemi, Yves Bazin & Mark Miller for the kind support!
 
 
 
@@ -59,7 +59,7 @@ Any fast FPU microcontroller and lots of programmamble LEDs.
 
 For best results use a [Teensy 4](https://www.pjrc.com/store/teensy40.html)
 
-Use a power supply and wiring that can provide enough Amps for your LED display - the code has no brightness or current limiting in place - and occasionally all LEDs could go full white.
+Use a power supply and wiring that can provide enough Amps for your LED display - the code might occasionally cause all LEDs to go full white. 
 
 
 ## License
