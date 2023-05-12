@@ -50,6 +50,8 @@ A big thank you to Sutaburosu, Antti Yliniemi, Yves Bazin & Mark Miller for the 
 
 [FastLED](https://github.com/FastLED/FastLED)
 
+[SmartMatrix](https://github.com/pixelmatix/SmartMatrix)
+
 
 
 
