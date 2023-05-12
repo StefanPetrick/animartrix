@@ -26,7 +26,7 @@ Great, please reach out to me and together we'll find a fair licensing solution 
 
 --------------------------------------------------------------------------------------------
 
-Installation: Unzip and install all .ino files in one folder and run animartrix.ino
+Installation: Unzip and install all .ino files in one folder and run AnimARTrix_SmartMatrix.ino
 
 --------------------------------------------------------------------------------------------
 
