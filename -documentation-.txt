@@ -1,7 +1,3 @@
-Copy all files in one folder and run
-
-animartrix_v02.ino     (FastLED version) or
-animartrix_smartmatrix (SmartMatrix version)
 
 
 Basic Transitions:
@@ -49,14 +45,4 @@ Basic Color Mappings:
 RGB
 
 Add, subtract, multiply, filter mask, average
-
-
-
-Interesting Techniques:
-
-Cartesian domain warping
-
-Polar domain warping
-
-
 
