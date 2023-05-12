@@ -97,32 +97,13 @@ rgb rgb_sanity_check(rgb &pixel) {
 // find the right led index according to you LED matrix wiring
 
 uint16_t xy(uint8_t x, uint8_t y) {
+  /*
   if (y & 1)                             // check last bit
     return (y + 1) * num_x - 1 - x;      // reverse every second line for a serpentine lled layout
   else
+  */
     return y * num_x + x;                // use this equation only for a line by line layout
 }                                        // remove the previous 3 lines of code in this case
 
 
 
-// Show the current framerate, rendered pixels per second,
-// rendering time & time spend to push the data to the leds.
-// in the serial monitor.
-
-void report_performance() {
-  
-  float calc  = b - a;                         // rendering time
-  float push  = c - b;                         // time to initialize led update
-  float total = c - a;                         // time per frame
-  int fps  = 1000000 / total;                // frames per second
-  int kpps = (fps * num_x * num_y) / 1000;   // kilopixel per second
-
-  Serial.print(fps);                         Serial.print(" fps  ");
-  Serial.print(kpps);                        Serial.print(" kpps @");
-  Serial.print(num_x*num_y);                 Serial.print(" LEDs  ");  
-  Serial.print(round(total));                Serial.print(" µs per frame  Rendering: ");
-  Serial.print(round((calc * 100) / total)); Serial.print("%  Sending data: ");
-  Serial.print(round((push * 100) / total)); Serial.print("%  (");
-  Serial.print(round(calc));                 Serial.print(" + ");
-  Serial.print(round(push));                 Serial.println(" µs) ");
-}
