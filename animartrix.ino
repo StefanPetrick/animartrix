@@ -1,9 +1,28 @@
-// A 5D coordinate mapper by Stefan Petrick 2023 
-//
-// VO.3 preview version
-// 
-// This code is licenced under a Creative Commons Attribution 
-// License CC BY-NC 3.0
+/*
+  ___        _            ___  ______ _____    _      
+ / _ \      (_)          / _ \ | ___ \_   _|  (_)     
+/ /_\ \_ __  _ _ __ ___ / /_\ \| |_/ / | |_ __ ___  __
+|  _  | '_ \| | '_ ` _ \|  _  ||    /  | | '__| \ \/ /
+| | | | | | | | | | | | | | | || |\ \  | | |  | |>  < 
+\_| |_/_| |_|_|_| |_| |_\_| |_/\_| \_| \_/_|  |_/_/\_\
+
+by Stefan Petrick 2023.
+
+High quality LED animations for your next project.
+
+This is a Shader and 5D Coordinate Mapper made for realtime 
+rendering of generative animations & artistic dynamic visuals.
+
+This is also a modular animation synthesizer with waveform 
+generators, oscillators, filters, modulators, noise generators, 
+compressors... and much more.
+
+VO.42 beta version
+ 
+This code is licenced under a Creative Commons Attribution 
+License CC BY-NC 3.0
+
+*/
 
 #include <FastLED.h>
 
