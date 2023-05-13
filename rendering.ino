@@ -21,7 +21,7 @@ float render_value(render_parameters &animation) {
   if (raw_noise_field_value < animation.low_limit)  raw_noise_field_value =  animation.low_limit;
   if (raw_noise_field_value > animation.high_limit) raw_noise_field_value = animation.high_limit;
 
-  float scaled_noise_value = map(raw_noise_field_value, animation.low_limit, animation.high_limit, 0, 255);
+  float scaled_noise_value = map_float(raw_noise_field_value, animation.low_limit, animation.high_limit, 0, 255);
 
   return scaled_noise_value;
 }
@@ -44,7 +44,7 @@ void render_polar_lookup_table(float cx, float cy) {
   }
 }
 
-/* ...too slow!
+
 
 // float mapping maintaining 32 bit precision
 // we keep values with high resolution for potential later usage
@@ -57,7 +57,7 @@ float map_float(float x, float in_min, float in_max, float out_min, float out_ma
 
   return result; 
 }
-*/
+
 
 /* unnecessary bloat
 
