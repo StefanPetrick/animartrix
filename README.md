@@ -38,7 +38,7 @@ My own posts reporting development progress can be found [here on Reddit](https:
 
 
 
-A big thank you to Sutaburosu, Antti Yliniemi, Yves Bazin & Mark Miller for the kind support!
+A big thank you to Sutaburosu, Antti Yliniemi, Yves Bazin & Marc Miller for the kind support!
 
 
 
