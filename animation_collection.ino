@@ -1142,3 +1142,277 @@ void Polar_Waves() { // nice one
   c = micros(); // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
 }
+
+void RGB_Blobs() { // nice one
+
+  a = micros();                   
+
+  timings.master_speed = 0.2;    // master speed
+
+  timings.ratio[0] = 0.0025;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[1] = 0.0027;
+  timings.ratio[2] = 0.0031;
+  timings.ratio[3] = 0.0033;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[4] = 0.0036;
+  timings.ratio[5] = 0.0039;
+  
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y];
+      animation.angle      = polar_theta[x][y] + move.radial[0] + move.noise_angle[0]+ move.noise_angle[3];
+      animation.z          = (sqrtf(animation.dist));// - 10 * move.linear[0];
+      animation.scale_x    = 0.1;
+      animation.scale_y    = 0.1;
+      animation.offset_z   = 10;
+      animation.offset_x   = 10*move.linear[0];
+      float show1          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[1]+ move.noise_angle[1]+ move.noise_angle[4];
+      animation.offset_x   = 11*move.linear[1];
+      animation.offset_z   = 100;
+      float show2          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[2]+ move.noise_angle[2]+ move.noise_angle[5];
+      animation.offset_x   = 12*move.linear[2];
+      animation.offset_z   = 300;
+      float show3          = render_value(animation);
+      
+
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-distance[x][y])/distance[x][y];
+
+      pixel.red    = radial * show1;
+      pixel.green  = radial * show2;
+      pixel.blue   = radial * show3;
+     
+      
+      
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+
+void RGB_Blobs2() { // nice one
+
+  a = micros();                   
+
+  timings.master_speed = 0.12;    // master speed
+
+  timings.ratio[0] = 0.0025;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[1] = 0.0027;
+  timings.ratio[2] = 0.0031;
+  timings.ratio[3] = 0.0033;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[4] = 0.0036;
+  timings.ratio[5] = 0.0039;
+  
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y];
+      animation.angle      = polar_theta[x][y] + move.radial[0] + move.noise_angle[0]+ move.noise_angle[3] + move.noise_angle[1];
+      animation.z          = (sqrtf(animation.dist));// - 10 * move.linear[0];
+      animation.scale_x    = 0.1;
+      animation.scale_y    = 0.1;
+      animation.offset_z   = 10;
+      animation.offset_x   = 10*move.linear[0];
+      float show1          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[1]+ move.noise_angle[1]+ move.noise_angle[4] + move.noise_angle[2];
+      animation.offset_x   = 11*move.linear[1];
+      animation.offset_z   = 100;
+      float show2          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[2]+ move.noise_angle[2]+ move.noise_angle[5]+ move.noise_angle[3];
+      animation.offset_x   = 12*move.linear[2];
+      animation.offset_z   = 300;
+      float show3          = render_value(animation);
+      
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-distance[x][y])/distance[x][y];
+
+      pixel.red    = radial * (show1-show3);
+      pixel.green  = radial * (show2-show1);
+      pixel.blue   = radial * (show3-show2);
+     
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+void RGB_Blobs3() { // nice one
+
+  a = micros();                   
+
+  timings.master_speed = 0.12;    // master speed
+
+  timings.ratio[0] = 0.0025;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[1] = 0.0027;
+  timings.ratio[2] = 0.0031;
+  timings.ratio[3] = 0.0033;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[4] = 0.0036;
+  timings.ratio[5] = 0.0039;
+  
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] + move.noise_angle[4];
+      animation.angle      = polar_theta[x][y] + move.radial[0] + move.noise_angle[0]+ move.noise_angle[3] + move.noise_angle[1];
+      animation.z          = (sqrtf(animation.dist));// - 10 * move.linear[0];
+      animation.scale_x    = 0.1 ;
+      animation.scale_y    = 0.1 ;
+      animation.offset_z   = 10;
+      animation.offset_x   = 10*move.linear[0];
+      float show1          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[1]+ move.noise_angle[1]+ move.noise_angle[4] + move.noise_angle[2];
+      animation.offset_x   = 11*move.linear[1];
+      animation.offset_z   = 100;
+      float show2          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[2]+ move.noise_angle[2]+ move.noise_angle[5]+ move.noise_angle[3];
+      animation.offset_x   = 12*move.linear[2];
+      animation.offset_z   = 300;
+      float show3          = render_value(animation);
+      
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-distance[x][y])/distance[x][y];
+
+      pixel.red    = radial * (show1+show3)*0.5 * animation.dist/5;
+      pixel.green  = radial * (show2+show1)*0.5 * y/15;
+      pixel.blue   = radial * (show3+show2)*0.5 * x/15;
+     
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+void RGB_Blobs4() { // nice one
+
+  a = micros();                   
+
+  timings.master_speed = 0.02;    // master speed
+
+  timings.ratio[0] = 0.0025;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[1] = 0.0027;
+  timings.ratio[2] = 0.0031;
+  timings.ratio[3] = 0.0033;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[4] = 0.0036;
+  timings.ratio[5] = 0.0039;
+  
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] + move.noise_angle[4];
+      animation.angle      = polar_theta[x][y] + move.radial[0] + move.noise_angle[0]+ move.noise_angle[3] + move.noise_angle[1];
+      animation.z          = 3+sqrtf(animation.dist);
+      animation.scale_x    = 0.1;
+      animation.scale_y    = 0.1;
+      animation.offset_z   = 10;
+      animation.offset_x   = 50 * move.linear[0];
+      float show1          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[1]+ move.noise_angle[1]+ move.noise_angle[4] + move.noise_angle[2];
+      animation.offset_x   = 50 * move.linear[1];
+      animation.offset_z   = 100;
+      float show2          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[2]+ move.noise_angle[2]+ move.noise_angle[5]+ move.noise_angle[3];
+      animation.offset_x   = 50 * move.linear[2];
+      animation.offset_z   = 300;
+      float show3          = render_value(animation);
+      
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-distance[x][y])/distance[x][y];
+
+      pixel.red    = radial * (show1+show3)*0.5 * animation.dist/5;
+      pixel.green  = radial * (show2+show1)*0.5 * y/15;
+      pixel.blue   = radial * (show3+show2)*0.5 * x/15;
+     
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
+
+void RGB_Blobs5() { // nice one
+
+  a = micros();                   
+
+  timings.master_speed = 0.02;    // master speed
+
+  timings.ratio[0] = 0.0025;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[1] = 0.0027;
+  timings.ratio[2] = 0.0031;
+  timings.ratio[3] = 0.0033;           // speed ratios for the oscillators, higher values = faster transitions
+  timings.ratio[4] = 0.0036;
+  timings.ratio[5] = 0.0039;
+  
+  calculate_oscillators(timings); 
+
+  for (int x = 0; x < num_x; x++) {
+    for (int y = 0; y < num_y; y++) {
+      
+      animation.dist       = distance[x][y] + move.noise_angle[4];
+      animation.angle      = polar_theta[x][y] + move.radial[0] + move.noise_angle[0]+ move.noise_angle[3] + move.noise_angle[1];
+      animation.z          = 3+sqrtf(animation.dist);
+      animation.scale_x    = 0.08;
+      animation.scale_y    = 0.08;
+      animation.offset_z   = 10;
+      animation.offset_x   = 50 * move.linear[0];
+      float show1          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[1]+ move.noise_angle[1]+ move.noise_angle[4] + move.noise_angle[2];
+      animation.offset_x   = 50 * move.linear[1];
+      animation.offset_z   = 100;
+      float show2          = render_value(animation);
+
+      animation.angle      = polar_theta[x][y] + move.radial[2]+ move.noise_angle[2]+ move.noise_angle[5]+ move.noise_angle[3];
+      animation.offset_x   = 50 * move.linear[2];
+      animation.offset_z   = 300;
+      float show3          = render_value(animation);
+      
+      float radius = 11;   // radius of a radial brightness filter
+      float radial = (radius-distance[x][y])/distance[x][y];
+
+      pixel.red    = radial * (show1+show3)*0.5 * animation.dist/5;
+      pixel.green  = radial * (show2+show1)*0.5 * y/15;
+      pixel.blue   = radial * (show3+show2)*0.5 * x/15;
+     
+      pixel = rgb_sanity_check(pixel);
+      leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+    }
+  }
+  b = micros(); // for time measurement in report_performance()
+  FastLED.show(); 
+  c = micros(); // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report
+}
