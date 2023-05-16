@@ -101,6 +101,129 @@ rgb pixel;
 
 float show1, show2, show3, show4, show5, show6, show7, show8, show9, show0;
 
+//******************************************************************************************************************
+typedef void (*Pattern)();
+typedef Pattern PatternList[];
+typedef struct {
+  Pattern pattern;
+  String name;
+} PatternAndName;
+typedef PatternAndName PatternAndNameList[];
+
+int currentPattern = 0;
+
+void   Module_Experiment10();
+void   Module_Experiment9();
+void   Module_Experiment8();
+void   Module_Experiment7();
+void   Module_Experiment6();
+void   Module_Experiment5();
+void   Module_Experiment4();
+void   Zoom2();
+void   Module_Experiment3();
+void   Module_Experiment2();
+void   Module_Experiment1();
+void   Parametric_Water();
+void   Water();
+void   Complex_Kaleido_6();
+void   Complex_Kaleido_5();
+void    Complex_Kaleido_4();
+void  Complex_Kaleido_3();
+void   Complex_Kaleido_2();
+void  Complex_Kaleido();
+void   SM10();
+void   SM9();
+void   SM8();
+void   SM7();
+void   SM6();
+void   SM5();
+void   SM4();
+void   SM3();
+void   SM2();
+void   SM1();
+void   Big_Caleido();
+void   RGB_Blobs5();
+void  RGB_Blobs4();
+void  RGB_Blobs3();
+void  RGB_Blobs2();
+void   RGB_Blobs();
+void   Polar_Waves();
+void   Slow_Fade();
+void   Zoom();
+void   Hot_Blob();
+void   Spiralus2();
+void   Spiralus();
+void   Yves();
+void   Scaledemo1();
+void   Lava1();
+void   Caleido3();
+void   Caleido2();
+void   Caleido1();
+void   Distance_Experiment();
+void   Center_Field();
+void   Waves();
+void   Chasing_Spirals();
+void   Rotating_Blob();
+
+PatternAndNameList gPatterns = {
+{Module_Experiment10,"Module_Experiment10"},
+{Module_Experiment9,"Module_Experiment9"},
+{Module_Experiment8,"Module_Experiment8"},
+{Module_Experiment7,"Module_Experiment7"},
+{Module_Experiment6,"Module_Experiment6"},
+{Module_Experiment5,"Module_Experiment5"},
+{Module_Experiment4,"Module_Experiment4"},
+{Zoom2, "Zoom2"}, 
+{Module_Experiment3,"Module_Experiment3"},
+{Module_Experiment2,"Module_Experiment2"},
+{Module_Experiment1,"Module_Experiment1"},
+{Parametric_Water,"Parametric_Water"},
+{Water,"Water"},
+{Complex_Kaleido_6,"Complex_Kaleido_6"},
+{Complex_Kaleido_5,"Complex_Kaleido_5"},
+{Complex_Kaleido_4,"Complex_Kaleido_4"},
+{Complex_Kaleido_3, "Complex_Kaleido_3"},
+{Complex_Kaleido_2,"Complex_Kaleido_2"},
+{Complex_Kaleido, "Complex_Kaleido"},
+{SM10,"SM10"},
+{SM9,"SM9"},
+{SM8,"SM8"},
+// {SM7,"SM7"},
+{SM6,"SM6"},
+{SM5,"SM5"},
+{SM4,"SM4"},
+{SM3,"SM3"},
+{SM2,"SM2"},
+{SM1,"SM1"},
+{Big_Caleido,"Big_Caleido"},
+{RGB_Blobs5,"RGB_Blobs5"},
+{RGB_Blobs4,"RGB_Blobs4"},
+{RGB_Blobs3,"RGB_Blobs3"},
+{RGB_Blobs2,"RGB_Blobs2"},
+{RGB_Blobs,"RGB_Blobs"},
+{Polar_Waves,"Polar_Waves"},
+{Slow_Fade,"Slow_Fade"},
+{Zoom,"Zoom"},
+{Hot_Blob,"Hot_Blob"},
+{Spiralus2,"Spiralus2"},
+{Spiralus,"Spiralus"},
+{Yves,"Yves"},
+{Scaledemo1,"Scaledemo1"},
+{Lava1,"Lava1"},
+{Caleido3,"Caleido3"},
+{Caleido2,"Caleido2"},
+{Caleido1,"Caleido1"},
+{Distance_Experiment,"Distance_Experiment"},
+{Center_Field,"Center_Field"},
+{Waves,"Waves"},
+{Chasing_Spirals,"Chasing_Spirals"},
+{Rotating_Blob,"Rotating_Blob"},
+};
+
+#define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
+int gPatternCount = ARRAY_SIZE(gPatterns);
+
+
 
 //******************************************************************************************************************
 
@@ -140,7 +263,7 @@ void loop() {
   //Water();                // nice water simulation
   //Complex_Kaleido_6();    // red blue moire
   //Complex_Kaleido_5();    // interference pattern
-  Complex_Kaleido_4();    // colorful slow mandala
+  // Complex_Kaleido_4();    // colorful slow mandala
   //Complex_Kaleido_3();
   //Complex_Kaleido_2();    // hypnotic smooth
   //Complex_Kaleido();
@@ -178,6 +301,16 @@ void loop() {
   //Chasing_Spirals();      // slim
   //Rotating_Blob();        // 
   
+  EVERY_N_SECONDS(90) {
+    currentPattern = random(0, (gPatternCount - 1));
+//     autopgm++;
+    // if (autopgm >= gPatternCount) autopgm = 1;
+    Serial.print("Next Auto pattern: ");
+    Serial.println(gPatterns[currentPattern].name);
+  }
+
+  gPatterns[currentPattern].pattern();
+
   show_frame();
  
 } 
