@@ -1,3 +1,15 @@
+// float mapping maintaining 32 bit precision
+// we keep values with high resolution for potential later usage
+
+float map_float(float x, float in_min, float in_max, float out_min, float out_max) { 
+  
+  float result = (x-in_min) * (out_max-out_min) / (in_max-in_min) + out_min;
+  if (result < out_min) result = out_min;
+  if( result > out_max) result = out_max;
+
+  return result; 
+}
+
 // Convert the 2 polar coordinates back to cartesian ones & also apply all 3d transitions.
 // Calculate the noise value at this point based on the 5 dimensional manipulation of 
 // the underlaying coordinates.
@@ -46,17 +58,6 @@ void render_polar_lookup_table(float cx, float cy) {
 
 
 
-// float mapping maintaining 32 bit precision
-// we keep values with high resolution for potential later usage
-
-float map_float(float x, float in_min, float in_max, float out_min, float out_max) { 
-  
-  float result = (x-in_min) * (out_max-out_min) / (in_max-in_min) + out_min;
-  if (result < out_min) result = out_min;
-  if( result > out_max) result = out_max;
-
-  return result; 
-}
 
 
 /* unnecessary bloat
