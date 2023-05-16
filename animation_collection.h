@@ -1,3 +1,7 @@
+#include "noise.h"
+#include "oscillators.h"
+#include "rendering.h"
+
 
 void Rotating_Blob() {
 

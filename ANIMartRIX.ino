@@ -83,6 +83,48 @@ struct rgb {
 rgb pixel;
 
 
+typedef void (*Pattern)();
+typedef Pattern PatternList[];
+typedef struct {
+  Pattern pattern;
+  String name;
+} PatternAndName;
+typedef PatternAndName PatternAndNameList[];
+
+int currentPattern = 0;
+
+#include "animation_collection.h"
+
+PatternAndNameList gPatterns = {
+ { RGB_Blobs5, "RGB_Blobs5" },
+ { RGB_Blobs4, "RGB_Blobs4" },
+ { RGB_Blobs3, "RGB_Blobs3" },
+ { RGB_Blobs2, "RGB_Blobs2" },
+ { RGB_Blobs, "RGB_Blobs" },
+ { Polar_Waves, "Polar_Waves" },
+ { Slow_Fade, "Slow_Fade" },
+//  { Zoom2, "Zoom2" },
+ { Zoom, "Zoom" },
+ { Hot_Blob, "Hot_Blob" },
+ { Spiralus2, "Spiralus2" },
+ { Spiralus, "Spiralus" },
+ { Yves, "Yves" },
+ { Scaledemo1, "Scaledemo1" },
+ { Lava1, "Lava1" },
+ { Caleido3, "Caleido3" },
+ { Caleido2, "Caleido2" },
+ { Caleido1, "Caleido1" },
+ { Distance_Experiment, "Distance_Experiment" },
+ { Center_Field, "Center_Field" },
+ { Waves, "Waves" },
+ { Chasing_Spirals, "Chasing_Spirals" },
+ { Rotating_Blob, "Rotating_Blob" },
+ { Rings, "Rings" },
+};
+
+#define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
+int gPatternCount = ARRAY_SIZE(gPatterns);
+
 
 //******************************************************************************************************************
 
@@ -120,7 +162,7 @@ void loop() {
   //Spiralus();
   //Yves();
   //Scaledemo1();
-  Lava1();
+  // Lava1();
   //Caleido3();
   //Caleido2();
   //Caleido1();
@@ -130,5 +172,14 @@ void loop() {
   //Chasing_Spirals();
   //Rotating_Blob();
   //Rings();
+  EVERY_N_SECONDS(90) {
+    currentPattern = random(1, (gPatternCount - 1));
+//     autopgm++;
+    // if (autopgm >= gPatternCount) autopgm = 1;
+    Serial.print("Next Auto pattern: ");
+    Serial.println(gPatterns[currentPattern].name);
+  }
+
+  gPatterns[currentPattern].pattern();
 } 
 
