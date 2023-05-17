@@ -12,6 +12,12 @@ void show_frame(){  // swap buffers, measure time, output current performance
   c = micros();                               // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report 
 }
+
+rgb24 setPixelColor(rgb pixel) {
+  pixel = rgb_sanity_check(pixel);
+  return rgb24(pixel.red, pixel.green, pixel.blue);
+}
+
 #else
 void get_ready() {
 
@@ -25,6 +31,11 @@ void show_frame(){  // update LEDs, measure time, output current performance
   FastLED.show();
   c = micros();                               // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report 
+}
+
+CRGB setPixelColor(rgb pixel) {
+  pixel = rgb_sanity_check(pixel);
+  return CRGB(pixel.red, pixel.green, pixel.blue);
 }
 #endif
 
