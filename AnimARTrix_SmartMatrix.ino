@@ -58,8 +58,6 @@ rgb24 *buffer = backgroundLayer.backBuffer();
 CRGB buffer[num_x * num_y];               // framebuffer
 #endif
 
-CRGB leds[num_x * num_y];               // framebuffer
-
 float polar_theta[num_x][num_y];        // look-up table for polar angles
 float distance[num_x][num_y];           // look-up table for polar distances
 
