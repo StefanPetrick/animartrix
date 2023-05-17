@@ -24,15 +24,21 @@ License CC BY-NC 3.0
 
 */
 
-#include <MatrixHardware_Teensy4_ShieldV5.h>        // SmartLED Shield for Teensy 4 (V5)
-#include <SmartMatrix.h>
 #include <FastLED.h>
+
+#ifdef ESP32
+#define USE_SMARTMATRIX // Comment/remove this line to swap back to FastLED
+#endif
 
 #define num_x       32                       // how many LEDs are in one row?
 #define num_y       32                       // how many rows?
 #define brightness 255                       // please be aware that reducing brightness also reduces color resolution, use only in emergency
 
 #define radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
+
+#ifdef USE_SMARTMATRIX
+#include <MatrixHardware_Teensy4_ShieldV5.h>        // SmartLED Shield for Teensy 4 (V5)
+#include <SmartMatrix.h>
 
 #define COLOR_DEPTH 24                  // Choose the color depth used for storing pixels in the layers: 24 or 48 (24 is good for most sketches - If the sketch uses type `rgb24` directly, COLOR_DEPTH must be 24)
 const uint16_t kMatrixWidth   = num_x;  // Set to the width of your display, must be a multiple of 8
@@ -45,8 +51,13 @@ const uint8_t  kBackgroundLayerOptions = (SM_BACKGROUND_OPTIONS_NONE);
 
 SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth, kDmaBufferRows, kPanelType, kMatrixOptions);
 SMARTMATRIX_ALLOCATE_BACKGROUND_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kBackgroundLayerOptions);
+rgb24 *buffer = backgroundLayer.backBuffer();
 
-//#define NUM_LEDS ((num_x) * (num_y))
+#else
+#define NUM_LEDS ((num_x) * (num_y))
+CRGB buffer[num_x * num_y];               // framebuffer
+#endif
+
 CRGB leds[num_x * num_y];               // framebuffer
 
 float polar_theta[num_x][num_y];        // look-up table for polar angles
@@ -106,17 +117,21 @@ float show1, show2, show3, show4, show5, show6, show7, show8, show9, show0;
 
 void setup() {
   
-  // FastLED.addLeds<NEOPIXEL, 13>(leds, NUM_LEDS);
-  // FastLED.addLeds<APA102, 11, 13, BGR, DATA_RATE_MHZ(12)>(leds, NUM_LEDS);   
-  // FastLED.setMaxPowerInVoltsAndMilliamps( 5, 2000); // optional current limiting [5V, 2000mA] 
 
   Serial.begin(115200);                 // check serial monitor for current fps count
  
   render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
-                                                                            // polar origin is set to matrix centre
+
+#ifdef USE_SMARTMATRIX                                                                            // polar origin is set to matrix centre
   matrix.addLayer(&backgroundLayer); 
   matrix.setBrightness(brightness); 
   matrix.begin();
+#else
+  // FastLED.addLeds<NEOPIXEL, 13>(leds, NUM_LEDS);
+  FastLED.addLeds<APA102, 11, 13, BGR, DATA_RATE_MHZ(12)>(leds, NUM_LEDS);   
+  // FastLED.setMaxPowerInVoltsAndMilliamps( 5, 2000); // optional current limiting [5V, 2000mA] 
+  FastLED.setBrightness(brightness);
+#endif
 }
 
 //*******************************************************************************************************************

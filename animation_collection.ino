@@ -1,8 +1,8 @@
 
 void Rotating_Blob() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                  // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 0.1;         // higher values = faster transitions
@@ -66,8 +66,8 @@ void Rotating_Blob() {
 
 void Chasing_Spirals() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                      // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 0.1;         // higher values = faster transitions
@@ -124,8 +124,8 @@ void Chasing_Spirals() {
 
 void Rings() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                      // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 1;         // higher values = faster transitions
@@ -180,8 +180,8 @@ void Rings() {
 
 void Waves() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                     // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+  
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 2;         // higher values = faster transitions
@@ -229,8 +229,8 @@ void Waves() {
 
 void Center_Field() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                  // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 1;         // higher values = faster transitions
@@ -474,8 +474,8 @@ void Caleido2() {
 
 void Caleido3() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                      // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.004;    // speed ratios for the oscillators
   timings.ratio[0] = 0.02;         // higher values = faster transitions
@@ -615,8 +615,8 @@ void Lava1() {
 
 void Scaledemo1() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();    
+  get_ready(); // for time measurement in report_performance() 
+      
 
   timings.master_speed = 0.00003;    // speed ratios for the oscillators
   timings.ratio[0] = 4;         // higher values = faster transitions
@@ -673,8 +673,8 @@ void Scaledemo1() {
 
 void Yves() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();    
+  get_ready(); // for time measurement in report_performance() 
+      
 
   a = micros();                   // for time measurement in report_performance()
 
@@ -749,8 +749,8 @@ void Yves() {
 
 void Spiralus() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();    
+  get_ready(); // for time measurement in report_performance() 
+      
 
   timings.master_speed = 0.0011;    // speed ratios for the oscillators
   timings.ratio[0] = 1.5;         // higher values = faster transitions
@@ -812,8 +812,8 @@ void Spiralus() {
 
 void Spiralus2() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();  
+  get_ready(); // for time measurement in report_performance() 
+    
 
   timings.master_speed = 0.0015;    // speed ratios for the oscillators
   timings.ratio[0] = 1.5;         // higher values = faster transitions
@@ -878,8 +878,8 @@ void Spiralus2() {
 
 void Hot_Blob() { // nice one
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                
+  get_ready(); // for time measurement in report_performance() 
+                  
 
   run_default_oscillators();
 
@@ -930,9 +930,9 @@ void Hot_Blob() { // nice one
 
 void Zoom() { // nice one
   
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   run_default_oscillators();
   timings.master_speed = 0.003;
@@ -974,9 +974,9 @@ void Zoom() { // nice one
 
 void Slow_Fade() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();                  
+                    
 
   run_default_oscillators();
   timings.master_speed = 0.00005;
@@ -1030,9 +1030,9 @@ void Slow_Fade() { // nice one
 
 void Polar_Waves() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
                     
 
@@ -1084,8 +1084,8 @@ void Polar_Waves() { // nice one
 
 void RGB_Blobs() { // nice one
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                     
+  get_ready(); // for time measurement in report_performance() 
+                       
 
   timings.master_speed = 0.2;    // master speed
 
@@ -1140,8 +1140,8 @@ void RGB_Blobs() { // nice one
 
 void RGB_Blobs2() { // nice one
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                    
+  get_ready(); // for time measurement in report_performance() 
+                      
 
   timings.master_speed = 0.12;    // master speed
 
@@ -1192,9 +1192,9 @@ void RGB_Blobs2() { // nice one
 
 void RGB_Blobs3() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();                 
+                   
 
   timings.master_speed = 0.12;    // master speed
 
@@ -1245,9 +1245,9 @@ void RGB_Blobs3() { // nice one
 
 void RGB_Blobs4() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
                      
 
@@ -1300,9 +1300,9 @@ void RGB_Blobs4() { // nice one
 
 void RGB_Blobs5() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
                    
 
@@ -1356,9 +1356,9 @@ void RGB_Blobs5() { // nice one
 
 void Big_Caleido() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();                
+                  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1435,9 +1435,9 @@ void Big_Caleido() { // nice one
 
 void SM1() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1523,9 +1523,9 @@ void SM1() { // nice one
 
 void SM2() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed
 
@@ -1589,9 +1589,9 @@ void SM2() {
 
 void SM3() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1682,9 +1682,9 @@ void SM3() {
 
 void SM4() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1739,9 +1739,9 @@ void SM4() {
 
 void SM5() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed
 
@@ -1834,9 +1834,9 @@ void SM5() {
 
 void SM6() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed
 
@@ -1935,9 +1935,9 @@ void SM6() {
 
 void SM8() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.06;    // master speed
 
@@ -2013,9 +2013,9 @@ void SM8() {
 
 void SM9() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.005;    // master speed
 
@@ -2094,9 +2094,9 @@ void SM9() {
 
 void SM10() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.006;    // 0.006
 
@@ -2179,9 +2179,9 @@ void Complex_Kaleido() {
 
 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.009;    // master speed
 
@@ -2268,9 +2268,9 @@ void Complex_Kaleido_2() {
 
 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.009;    // master speed
 
@@ -2358,9 +2358,9 @@ void Complex_Kaleido_3() {
 
 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.001;    // master speed
 
@@ -2454,9 +2454,9 @@ void Complex_Kaleido_3() {
 
 void Complex_Kaleido_4() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.01 in the video
 
@@ -2561,9 +2561,9 @@ void Complex_Kaleido_4() {
 
 void Complex_Kaleido_5() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 
 
@@ -2612,9 +2612,9 @@ void Complex_Kaleido_5() {
 
 void Complex_Kaleido_6() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 
 
@@ -2671,9 +2671,9 @@ void Complex_Kaleido_6() {
 
 void Water() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.037;    // master speed 
 
@@ -2759,9 +2759,9 @@ void Water() {
 
 void Parametric_Water() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.003;    // master speed 
 
@@ -2853,9 +2853,9 @@ void Parametric_Water() {
 
 void Module_Experiment1() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed 
 
@@ -2891,9 +2891,9 @@ void Module_Experiment1() {
 
 void Module_Experiment2() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed 
 
@@ -2931,9 +2931,9 @@ void Module_Experiment2() {
 
 void Module_Experiment3() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 
 
@@ -2971,9 +2971,9 @@ void Module_Experiment3() {
 
 void Zoom2() { // nice one
   
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   run_default_oscillators();
   timings.master_speed = 0.003;
@@ -3012,9 +3012,9 @@ void Zoom2() { // nice one
 
 void Module_Experiment4() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.031;    // master speed 
 
@@ -3088,9 +3088,9 @@ void Module_Experiment4() {
 
 void Module_Experiment5() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.031;    // master speed 
 
@@ -3132,9 +3132,9 @@ void Module_Experiment5() {
 
 void Module_Experiment6() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.031
 
@@ -3196,9 +3196,9 @@ void Module_Experiment6() {
 
 void Module_Experiment7() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.005;    // master speed 0.031
 
@@ -3261,9 +3261,9 @@ void Module_Experiment7() {
 
 void Module_Experiment8() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.031
 
@@ -3353,9 +3353,9 @@ void Module_Experiment8() {
 
 void Module_Experiment9() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed 0.031
 
@@ -3397,9 +3397,9 @@ void Module_Experiment9() {
 
 void Module_Experiment10() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.031
 
