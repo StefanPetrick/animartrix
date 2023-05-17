@@ -287,8 +287,7 @@ void Center_Field() {
 void Distance_Experiment() {
 
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 0.2;         // higher values = faster transitions
@@ -344,8 +343,8 @@ void Distance_Experiment() {
 
 void Caleido1() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.003;    // speed ratios for the oscillators
   timings.ratio[0] = 0.02;         // higher values = faster transitions
@@ -409,8 +408,8 @@ void Caleido1() {
 
 void Caleido2() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.002;    // speed ratios for the oscillators
   timings.ratio[0] = 0.02;         // higher values = faster transitions
@@ -550,8 +549,8 @@ void Caleido3() {
 
 void Lava1() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.0015;    // speed ratios for the oscillators
   timings.ratio[0] = 4;         // higher values = faster transitions
