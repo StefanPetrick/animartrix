@@ -1,3 +1,4 @@
+#ifdef USE_SMARTMATRIX
 void get_ready() {  // wait until new buffer is ready, measure time
 
   a = micros(); 
@@ -11,7 +12,21 @@ void show_frame(){  // swap buffers, measure time, output current performance
   c = micros();                               // for time measurement in report_performance()
   EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report 
 }
+#else
+void get_ready() {
 
+  a = micros(); 
+  // while(backgroundLayer.isSwapPending());
+  b = micros(); 
+}
+
+void show_frame(){  // update LEDs, measure time, output current performance
+
+  FastLED.show();
+  c = micros();                               // for time measurement in report_performance()
+  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report 
+}
+#endif
 
 // Show the current framerate, rendered pixels per second,
 // rendering time & time spend to push the data to the leds.
@@ -32,7 +47,10 @@ void report_performance() {
   Serial.print(round((calc * 100) / total)); Serial.print("%  rendering: ");
   Serial.print(round((push * 100) / total)); Serial.print("%  (");
   Serial.print(round(calc));                 Serial.print(" + ");
-  Serial.print(round(push));                 Serial.print(" µs)  Core-temp: ");
-  Serial.print( tempmonGetTemp() );          Serial.println(" °C");
- 
+  Serial.print(round(push));                 Serial.print(" µs)  ");
+#ifndef ESP32  
+  Serial.print("Core-temp: %f °C\n", tempmonGetTemp());
+#else
+  Serial.println("");
+#endif
 }
