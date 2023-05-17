@@ -26,7 +26,9 @@ Great, please reach out to me and together we'll find a fair licensing solution 
 
 --------------------------------------------------------------------------------------------
 
-Installation: Unzip and install all .ino files in one folder and run AnimARTrix_SmartMatrix.ino
+Installation: Unzip and install all .ino files in one folder and run ANIMartRIX.ino
+
+Either comment out of remove the #define USE_SMARTMATRIX to switch between SmartMatrix and FastLED output
 
 --------------------------------------------------------------------------------------------
 
@@ -50,6 +52,7 @@ A big thank you to Sutaburosu, Antti Yliniemi, Yves Bazin & Marc Miller for the 
 
 [FastLED](https://github.com/FastLED/FastLED)
 
+## Optional Software: 
 [SmartMatrix](https://github.com/pixelmatix/SmartMatrix)
 
 

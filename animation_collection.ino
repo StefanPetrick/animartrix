@@ -1,8 +1,8 @@
 
 void Rotating_Blob() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                  // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 0.1;         // higher values = faster transitions
@@ -53,9 +53,9 @@ void Rotating_Blob() {
       pixel.green = show3 / 6;
       pixel.blue  = 0;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -66,8 +66,8 @@ void Rotating_Blob() {
 
 void Chasing_Spirals() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                      // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 0.1;         // higher values = faster transitions
@@ -113,9 +113,9 @@ void Chasing_Spirals() {
       pixel.green = show2 * radial_filter / 2;
       pixel.blue  = show3 * radial_filter / 4;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -124,8 +124,8 @@ void Chasing_Spirals() {
 
 void Rings() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                      // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 1;         // higher values = faster transitions
@@ -170,18 +170,17 @@ void Rings() {
       pixel.green = show2 / 4;
       pixel.blue  = show3 / 4;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
   }
- 
-}
+ }
 }
 
 void Waves() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                     // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+  
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 2;         // higher values = faster transitions
@@ -219,9 +218,9 @@ void Waves() {
       pixel.green = 0;
       pixel.blue  = show2;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -229,8 +228,8 @@ void Waves() {
 
 void Center_Field() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                  // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 1;         // higher values = faster transitions
@@ -275,9 +274,9 @@ void Center_Field() {
       pixel.green = show2;
       pixel.blue  = 0;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -287,8 +286,7 @@ void Center_Field() {
 void Distance_Experiment() {
 
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
 
   timings.master_speed = 0.01;    // speed ratios for the oscillators
   timings.ratio[0] = 0.2;         // higher values = faster transitions
@@ -332,9 +330,9 @@ void Distance_Experiment() {
       pixel.green = show2;
       pixel.blue  = 0;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -344,8 +342,8 @@ void Distance_Experiment() {
 
 void Caleido1() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.003;    // speed ratios for the oscillators
   timings.ratio[0] = 0.02;         // higher values = faster transitions
@@ -399,9 +397,9 @@ void Caleido1() {
       pixel.green = show3 * distance[x][y] / 10;
       pixel.blue  = (show2 + show4) / 2;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -409,8 +407,8 @@ void Caleido1() {
 
 void Caleido2() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.002;    // speed ratios for the oscillators
   timings.ratio[0] = 0.02;         // higher values = faster transitions
@@ -464,9 +462,9 @@ void Caleido2() {
       pixel.green = show3 * distance[x][y] / 10;
       pixel.blue  = (show2 + show4) / 2;
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -474,8 +472,8 @@ void Caleido2() {
 
 void Caleido3() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                      // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.004;    // speed ratios for the oscillators
   timings.ratio[0] = 0.02;         // higher values = faster transitions
@@ -539,9 +537,9 @@ void Caleido3() {
         pixel.blue = 0;
       }
 
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
 
     }
   }
@@ -550,8 +548,8 @@ void Caleido3() {
 
 void Lava1() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                   // for time measurement in report_performance()
+  get_ready(); // for time measurement in report_performance() 
+
 
   timings.master_speed = 0.0015;    // speed ratios for the oscillators
   timings.ratio[0] = 4;         // higher values = faster transitions
@@ -604,9 +602,9 @@ void Lava1() {
       pixel.red = linear*show2;
       pixel.green = 0.1*linear*(show2-show3);
       
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
 
     }
   }
@@ -615,8 +613,8 @@ void Lava1() {
 
 void Scaledemo1() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();    
+  get_ready(); // for time measurement in report_performance() 
+      
 
   timings.master_speed = 0.00003;    // speed ratios for the oscillators
   timings.ratio[0] = 4;         // higher values = faster transitions
@@ -662,9 +660,9 @@ void Scaledemo1() {
 
       }
       
-      pixel = rgb_sanity_check(pixel);
+      
 
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -673,8 +671,8 @@ void Scaledemo1() {
 
 void Yves() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();    
+  get_ready(); // for time measurement in report_performance() 
+      
 
   a = micros();                   // for time measurement in report_performance()
 
@@ -740,8 +738,8 @@ void Yves() {
       pixel.green = show3*show4/255;
       pixel.blue  = 0;
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -749,8 +747,8 @@ void Yves() {
 
 void Spiralus() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();    
+  get_ready(); // for time measurement in report_performance() 
+      
 
   timings.master_speed = 0.0011;    // speed ratios for the oscillators
   timings.ratio[0] = 1.5;         // higher values = faster transitions
@@ -803,8 +801,8 @@ void Spiralus() {
       pixel.green = f*(show1-show2);
       pixel.blue  = f*(show3-show1);
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -812,8 +810,8 @@ void Spiralus() {
 
 void Spiralus2() {
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();  
+  get_ready(); // for time measurement in report_performance() 
+    
 
   timings.master_speed = 0.0015;    // speed ratios for the oscillators
   timings.ratio[0] = 1.5;         // higher values = faster transitions
@@ -868,8 +866,8 @@ void Spiralus2() {
       pixel.green = f*(show1-show2);
       pixel.blue  = f*(show3-show1);
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -878,8 +876,8 @@ void Spiralus2() {
 
 void Hot_Blob() { // nice one
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                
+  get_ready(); // for time measurement in report_performance() 
+                  
 
   run_default_oscillators();
 
@@ -921,8 +919,8 @@ void Hot_Blob() { // nice one
       pixel.red   = radial  * show2;
       pixel.green   = linear * radial* 0.3* (show2-show4);
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
  
@@ -930,9 +928,9 @@ void Hot_Blob() { // nice one
 
 void Zoom() { // nice one
   
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   run_default_oscillators();
   timings.master_speed = 0.003;
@@ -962,8 +960,8 @@ void Zoom() { // nice one
       pixel.green   = 0;
       
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -974,9 +972,9 @@ void Zoom() { // nice one
 
 void Slow_Fade() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();                  
+                    
 
   run_default_oscillators();
   timings.master_speed = 0.00005;
@@ -1020,8 +1018,8 @@ void Slow_Fade() { // nice one
       pixel.blue   = radial * (show1 - show3) / 5;
       
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
  
@@ -1030,9 +1028,9 @@ void Slow_Fade() { // nice one
 
 void Polar_Waves() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
                     
 
@@ -1074,8 +1072,8 @@ void Polar_Waves() { // nice one
       pixel.blue   = radial * show3;
       
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -1084,8 +1082,8 @@ void Polar_Waves() { // nice one
 
 void RGB_Blobs() { // nice one
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                     
+  get_ready(); // for time measurement in report_performance() 
+                       
 
   timings.master_speed = 0.2;    // master speed
 
@@ -1130,8 +1128,8 @@ void RGB_Blobs() { // nice one
      
       
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
   
@@ -1140,8 +1138,8 @@ void RGB_Blobs() { // nice one
 
 void RGB_Blobs2() { // nice one
 
-  get_ready(); 
-  rgb24 *buffer = backgroundLayer.backBuffer();                    
+  get_ready(); // for time measurement in report_performance() 
+                      
 
   timings.master_speed = 0.12;    // master speed
 
@@ -1183,8 +1181,8 @@ void RGB_Blobs2() { // nice one
       pixel.green  = radial * (show2-show1);
       pixel.blue   = radial * (show3-show2);
      
-      pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
   
@@ -1192,9 +1190,9 @@ void RGB_Blobs2() { // nice one
 
 void RGB_Blobs3() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();                 
+                   
 
   timings.master_speed = 0.12;    // master speed
 
@@ -1236,8 +1234,8 @@ void RGB_Blobs3() { // nice one
       pixel.green  = radial * (show2+show1)*0.5 * y/15;
       pixel.blue   = radial * (show3+show2)*0.5 * x/15;
      
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -1245,9 +1243,9 @@ void RGB_Blobs3() { // nice one
 
 void RGB_Blobs4() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
                      
 
@@ -1291,8 +1289,8 @@ void RGB_Blobs4() { // nice one
       pixel.green  = radial * (show2+show1)*0.5 * y/15;
       pixel.blue   = radial * (show3+show2)*0.5 * x/15;
      
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -1300,9 +1298,9 @@ void RGB_Blobs4() { // nice one
 
 void RGB_Blobs5() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
                    
 
@@ -1346,9 +1344,9 @@ void RGB_Blobs5() { // nice one
       pixel.green  = radial * (show2+show1)*0.5 * y/15;
       pixel.blue   = radial * (show3+show2)*0.5 * x/15;
      
-      pixel = rgb_sanity_check(pixel);
+      
    
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
 
@@ -1356,9 +1354,9 @@ void RGB_Blobs5() { // nice one
 
 void Big_Caleido() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();                
+                  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1425,9 +1423,9 @@ void Big_Caleido() { // nice one
       pixel.green  = show2-show5;
       pixel.blue   = show3-show2+show1;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   //show_frame();
@@ -1435,9 +1433,9 @@ void Big_Caleido() { // nice one
 
 void SM1() { // nice one
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1509,13 +1507,13 @@ void SM1() { // nice one
       pixel.green  = show3+show4;
       pixel.blue   = show5;
      
-      pixel = rgb_sanity_check(pixel);
+      
       //leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(x, y)] = setPixelColor(pixel);
 
-      buffer[xy(31-x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
-      buffer[xy(31-x, 31-y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
-      buffer[xy(x, 31-y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      buffer[xy(31-x, y)] = setPixelColor(pixel);
+      buffer[xy(31-x, 31-y)] = setPixelColor(pixel);
+      buffer[xy(x, 31-y)] = setPixelColor(pixel);
     }
   }
   //show_frame();
@@ -1523,9 +1521,9 @@ void SM1() { // nice one
 
 void SM2() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed
 
@@ -1577,9 +1575,9 @@ void SM2() {
       pixel.green  = show2;
       pixel.blue   = show3;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
 
       
     }
@@ -1589,9 +1587,9 @@ void SM2() {
 
 void SM3() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1671,9 +1669,9 @@ void SM3() {
       pixel.green  = show3;
       pixel.blue   = show5;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
 
     }
   }
@@ -1682,9 +1680,9 @@ void SM3() {
 
 void SM4() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed
 
@@ -1728,9 +1726,9 @@ void SM4() {
       pixel.green  = 0;
       pixel.blue   = colordodge(show2, show1);
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
 
     }
   }
@@ -1739,9 +1737,9 @@ void SM4() {
 
 void SM5() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed
 
@@ -1824,9 +1822,9 @@ void SM5() {
       pixel.green  = radial * colordodge(show2,show5);
       pixel.blue   = radial * screen(show3,show6);
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
@@ -1834,9 +1832,9 @@ void SM5() {
 
 void SM6() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed
 
@@ -1925,9 +1923,9 @@ void SM6() {
       pixel.green  = 0;
       pixel.blue   = radial * show9;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
@@ -1935,9 +1933,9 @@ void SM6() {
 
 void SM8() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.06;    // master speed
 
@@ -2003,9 +2001,9 @@ void SM8() {
       pixel.green  = 0;
       pixel.blue   = show6;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
@@ -2013,9 +2011,9 @@ void SM8() {
 
 void SM9() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.005;    // master speed
 
@@ -2085,18 +2083,18 @@ void SM9() {
       pixel.green  = 0;
       pixel.blue   = show6 * linear2;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void SM10() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.006;    // 0.006
 
@@ -2168,9 +2166,9 @@ void SM10() {
       pixel.green  = (show5-50)+(show6/16);
       pixel.blue   = 0;//show6;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
@@ -2179,9 +2177,9 @@ void Complex_Kaleido() {
 
 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.009;    // master speed
 
@@ -2257,9 +2255,9 @@ void Complex_Kaleido() {
       pixel.green  = 0.3*radial*show6;//(radial*(show1))*0.3f;
       pixel.blue   = radial*show5;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
@@ -2268,9 +2266,9 @@ void Complex_Kaleido_2() {
 
 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.009;    // master speed
 
@@ -2346,9 +2344,9 @@ void Complex_Kaleido_2() {
       pixel.green  = 0.3*radial*show6;//(radial*(show1))*0.3f;
       pixel.blue   = radial*show5;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
@@ -2358,9 +2356,9 @@ void Complex_Kaleido_3() {
 
 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.001;    // master speed
 
@@ -2445,18 +2443,18 @@ void Complex_Kaleido_3() {
       pixel.blue   = show5 * radial;
       pixel.red    = (1*show1 + 1*show2) - show7/2;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Complex_Kaleido_4() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.01 in the video
 
@@ -2552,18 +2550,18 @@ void Complex_Kaleido_4() {
       //pixel.blue   = show5 * radial;
       //pixel.red    = (1*show1 + 1*show2) - show7/2;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Complex_Kaleido_5() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 
 
@@ -2603,18 +2601,18 @@ void Complex_Kaleido_5() {
      
       pixel.red    = show1 * radial;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Complex_Kaleido_6() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 
 
@@ -2662,18 +2660,18 @@ void Complex_Kaleido_6() {
       pixel.red    = show1;
       pixel.blue   = show2;
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Water() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.037;    // master speed 
 
@@ -2750,18 +2748,18 @@ void Water() {
       
      
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Parametric_Water() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.003;    // master speed 
 
@@ -2844,18 +2842,18 @@ void Parametric_Water() {
       
      
      
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment1() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed 
 
@@ -2882,18 +2880,18 @@ void Module_Experiment1() {
 
       pixel.blue    = show1;
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment2() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.02;    // master speed 
 
@@ -2922,18 +2920,18 @@ void Module_Experiment2() {
       pixel.green  = show1 - 80;
       pixel.blue   = show1 - 150;
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment3() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 
 
@@ -2962,18 +2960,18 @@ void Module_Experiment3() {
       pixel.green  = show1 - 80;
       pixel.blue   = show1 - 150;
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Zoom2() { // nice one
   
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   run_default_oscillators();
   timings.master_speed = 0.003;
@@ -3003,8 +3001,8 @@ void Zoom2() { // nice one
       pixel.blue   = 40-show1;
       
       
-      pixel = rgb_sanity_check(pixel);
-      buffer[kMatrixWidth * y + x] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[kMatrixWidth * y + x] = setPixelColor(pixel);
     }
   }
   
@@ -3012,9 +3010,9 @@ void Zoom2() { // nice one
 
 void Module_Experiment4() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.031;    // master speed 
 
@@ -3079,18 +3077,18 @@ void Module_Experiment4() {
       //pixel.green  = show1 - 80;
       //pixel.blue   = show1 - 150;
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment5() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.031;    // master speed 
 
@@ -3123,18 +3121,18 @@ void Module_Experiment5() {
       pixel.red    = show1;
       
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment6() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.031
 
@@ -3187,18 +3185,18 @@ void Module_Experiment6() {
       pixel.blue   = 0;
       
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment7() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.005;    // master speed 0.031
 
@@ -3252,18 +3250,18 @@ void Module_Experiment7() {
       
       
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment8() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.031
 
@@ -3344,18 +3342,18 @@ void Module_Experiment8() {
       
       
       
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment9() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.03;    // master speed 0.031
 
@@ -3388,18 +3386,18 @@ void Module_Experiment9() {
 
       pixel.red    = 10*show1;
     
-      pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = (rgb24)CRGB(CRGB(pixel.red, pixel.green, pixel.blue));
+      
+      buffer[xy(x, y)] = setPixelColor(pixel);
     }
   }
 }
 
 void Module_Experiment10() { 
 
-  get_ready();
+  get_ready(); // for time measurement in report_performance()
 
-  rgb24 *buffer = backgroundLayer.backBuffer();
+  
 
   timings.master_speed = 0.01;    // master speed 0.031
 
@@ -3479,11 +3477,16 @@ void Module_Experiment10() {
       
       
       
-      pixel = rgb_sanity_check(pixel);
+      
 
       byte a = millis()/100;
       
-      buffer[xy(x, y)] = (rgb24)CRGB( CHSV(((a + show1 + show2) + show3), 255, 255));
+      CRGB p = CRGB( CHSV(((a + show1 + show2) + show3), 255, 255));
+      rgb p2;
+      p2.red = p.red;
+      p2.green = p.green;
+      p2.blue = p.blue;
+      buffer[xy(x, y)] = setPixelColor(p2);
     }
   }
 }
