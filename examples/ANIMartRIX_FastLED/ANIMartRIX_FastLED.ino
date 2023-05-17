@@ -27,61 +27,63 @@ License CC BY-NC 3.0
 #include <FastLED.h>
 #include <ANIMartRIX.h>
 
-#define num_x  16                       // how many LEDs are in one row?
-#define num_y  16                       // how many rows?
+#define num_x  30                       // how many LEDs are in one row?
+#define num_y  30                       // how many rows?
 
+#define NUM_LED (num_x * num_y)
+CRGB leds[NUM_LED];               // framebuffer
 
-CRGB leds[num_x * num_y];               // framebuffer
+bool serpentine = true;
 
-ANIMartRIX art(num_x, num_y, leds);
+ANIMartRIX art(num_x, num_y, leds, serpentine);
 
 //******************************************************************************************************************
 
 
 void setup() {
   
-  // FastLED.addLeds<NEOPIXEL, 13>(leds, NUM_LEDS);
+  // FastLED.addLeds<NEOPIXEL, 13>(leds, NUM_LED);
   
-  FastLED.addLeds<APA102, 11, 13, BGR, DATA_RATE_MHZ(12)>(leds, NUM_LEDS);   
+  FastLED.addLeds<APA102, 7, 14, BGR, DATA_RATE_MHZ(8)>(leds, NUM_LED);   
 
-  //FastLED.setMaxPowerInVoltsAndMilliamps( 5, 2000); // optional current limiting [5V, 2000mA] 
+  FastLED.setMaxPowerInVoltsAndMilliamps( 5, 2000); // optional current limiting [5V, 2000mA] 
 
   Serial.begin(115200);                 // check serial monitor for current fps count
  
-  art->render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
-                                                                            // polar origin is set to matrix centre
-  
+ // fill_rainbow(leds, NUM_LED, 0);
+  fill_solid(leds, NUM_LED, CRGB::Green);
+  FastLED.show();
 }
 
 //*******************************************************************************************************************
 
 void loop() {
-  
-  //RGB_Blobs5();
-  //RGB_Blobs4();
-  //RGB_Blobs3();
-  //RGB_Blobs2();
-  //RGB_Blobs();
-  //Polar_Waves();
-  //Slow_Fade();
-  //Zoom2();
-  //Zoom();
-  //Hot_Blob();
-  //Spiralus2();
-  //Spiralus();
-  //Yves();
-  //Scaledemo1();
-  art->Lava1();
-  //Caleido3();
-  //Caleido2();
-  //Caleido1();
-  //Distance_Experiment();
-  //Center_Field();
-  //Waves();
-  //Chasing_Spirals();
-  //Rotating_Blob();
-  //Rings();
+  //FastLED.clear();
+  // art.RGB_Blobs5();
+  // art.RGB_Blobs4();
+  // art.RGB_Blobs3();
+  // art.RGB_Blobs2();
+  art.RGB_Blobs();
+  // art.Polar_Waves();
+  // art.Slow_Fade();
+  // art.Zoom2();
+  // art.Zoom();
+  // art.Hot_Blob();
+  // art.Spiralus2();
+  // art.Spiralus();
+  // art.Yves();
+  // art.Scaledemo1();
+  // art. art.Lava1();
+  // art.Caleido3();
+  // art.Caleido2();
+  // art.Caleido1();
+  // art.Distance_Experiment();
+  // art.Center_Field();
+  // art.Waves();
+  // art.Chasing_Spirals();
+  // art.Rotating_Blob();
+  // art.Rings();
   FastLED.show();
-  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report 
+  EVERY_N_MILLIS(500) art.report_performance();   // check serial monitor for report 
 } 
 

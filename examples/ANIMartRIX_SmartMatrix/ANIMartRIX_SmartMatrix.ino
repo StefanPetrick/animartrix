@@ -29,8 +29,8 @@ License CC BY-NC 3.0
 #include <FastLED.h>
 #include <ANIMartRIX.h>
 
-#define num_x       32                       // how many LEDs are in one row?
-#define num_y       32                       // how many rows?
+#define num_x       64                       // how many LEDs are in one row?
+#define num_y       64                       // how many rows?
 #define brightness 255                       // please be aware that reducing brightness also reduces color resolution, use only in emergency
 
 #define radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
@@ -47,24 +47,20 @@ const uint8_t  kBackgroundLayerOptions = (SM_BACKGROUND_OPTIONS_NONE);
 SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth, kDmaBufferRows, kPanelType, kMatrixOptions);
 SMARTMATRIX_ALLOCATE_BACKGROUND_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kBackgroundLayerOptions);
 
-//#define NUM_LEDS ((num_x) * (num_y))
+#define NUM_LEDS ((num_x) * (num_y))
 CRGB leds[num_x * num_y];               // framebuffer
 
-ANIMartRIX art;
+bool serpentine = false;
+
+ANIMartRIX art(num_x, num_y, leds, serpentine);
 
 //******************************************************************************************************************
 
 
 void setup() {
   
-  // FastLED.addLeds<NEOPIXEL, 13>(leds, NUM_LEDS);
-  // FastLED.addLeds<APA102, 11, 13, BGR, DATA_RATE_MHZ(12)>(leds, NUM_LEDS);   
-  // FastLED.setMaxPowerInVoltsAndMilliamps( 5, 2000); // optional current limiting [5V, 2000mA] 
-
   Serial.begin(115200);                 // check serial monitor for current fps count
- 
-  art.render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
-                                                                            // polar origin is set to matrix centre
+                                                                             // polar origin is set to matrix centre
   matrix.addLayer(&backgroundLayer); 
   matrix.setBrightness(brightness); 
   matrix.begin();
@@ -128,7 +124,14 @@ void loop() {
   //Chasing_Spirals();      // slim
   //Rotating_Blob();        // 
   
-  art.show_frame();
- 
+  // TODO: nasty hack, but ok for now
+   rgb24 *buffer = backgroundLayer.backBuffer();
+   for(int i = 0; i < NUM_LEDS; i++) {
+     buffer[i] = leds[i];
+   }
+   
+   backgroundLayer.swapBuffers(false);
+   EVERY_N_MILLIS(500) art.report_performance();   // check serial monitor for report 
+
 } 
 

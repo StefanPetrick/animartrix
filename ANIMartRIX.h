@@ -94,16 +94,20 @@ static const byte pNoise[] = {   151,160,137,91,90, 15,131, 13,201,95,96,
 
 class ANIMartRIX {
 
+public:
+
 int num_x; // how many LEDs are in one row?
 int num_y; // how many rows?
 
 #define radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
 
 //#define NUM_LEDS ((num_x) * (num_y))
-CRGB buffer[999]; // TODO              // framebuffer
+CRGB* buffer; 
+bool  serpentine;
 
-float polar_theta[999][999];        // look-up table for polar angles
-float distance[999][999];           // look-up table for polar distances
+// TODO set sizes
+float polar_theta[99][99];        // look-up table for polar angles
+float distance[99][99];           // look-up table for polar distances
 
 unsigned long a, b, c;                  // for time measurements
 
@@ -112,6 +116,14 @@ unsigned long a, b, c;                  // for time measurements
 
 float show1, show2, show3, show4, show5, show6, show7, show8, show9, show0;
 
+ANIMartRIX(int w, int h, struct CRGB *data, bool serpentine) {
+  this->num_x  = w;
+  this->num_y = h;
+  this->buffer = data;
+  this->serpentine = serpentine;
+  render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
+                                                                           // polar origin is set to matrix centre
+}
 
 // Dynamic darkening methods:
 
@@ -352,29 +364,19 @@ rgb rgb_sanity_check(rgb &pixel) {
 // find the right led index according to you LED matrix wiring
 
 uint16_t xy(uint8_t x, uint8_t y) {
-  /*
-  if (y & 1)                             // check last bit
+  if (serpentine &&  y & 1)                             // check last bit
     return (y + 1) * num_x - 1 - x;      // reverse every second line for a serpentine lled layout
   else
-  */
     return y * num_x + x;                // use this equation only for a line by line layout
 }                                        // remove the previous 3 lines of code in this case
 
 
 
 void get_ready() {  // wait until new buffer is ready, measure time
-
+  // TODO: make callback
   // a = micros(); 
   // while(backgroundLayer.isSwapPending());
   // b = micros(); 
-}
-
-void show_frame(){  // swap buffers, measure time, output current performance
-
-// TODO: callback
-  // backgroundLayer.swapBuffers(false);  
-  // c = micros();                               // for time measurement in report_performance()
-  EVERY_N_MILLIS(500) report_performance();   // check serial monitor for report 
 }
 
 CRGB setPixelColor(rgb pixel) {
