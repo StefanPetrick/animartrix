@@ -57,7 +57,7 @@ const uint16_t kMatrixHeight  = num_y;  // Set to the height of your display
 
   SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth, kDmaBufferRows, kPanelType, kMatrixOptions);
   SMARTMATRIX_ALLOCATE_BACKGROUND_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kBackgroundLayerOptions);
-  rgb24 *matrixLeds = backgroundLayer.backBuffer();
+  rgb24 *buffer = backgroundLayer.backBuffer();
 #else
   #define NUM_LEDS ((num_x) * (num_y))
   CRGB buffer[num_x * num_y];               // framebuffer
