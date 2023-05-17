@@ -27,6 +27,7 @@ License CC BY-NC 3.0
 #include <MatrixHardware_Teensy4_ShieldV5.h>        // SmartLED Shield for Teensy 4 (V5)
 #include <SmartMatrix.h>
 #include <FastLED.h>
+#include <ANIMartRIX.h>
 
 #define num_x       32                       // how many LEDs are in one row?
 #define num_y       32                       // how many rows?
@@ -49,57 +50,7 @@ SMARTMATRIX_ALLOCATE_BACKGROUND_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeig
 //#define NUM_LEDS ((num_x) * (num_y))
 CRGB leds[num_x * num_y];               // framebuffer
 
-float polar_theta[num_x][num_y];        // look-up table for polar angles
-float distance[num_x][num_y];           // look-up table for polar distances
-
-unsigned long a, b, c;                  // for time measurements
-
-struct render_parameters {
-
-  float center_x = (num_x / 2) - 0.5;   // center of the matrix
-  float center_y = (num_y / 2) - 0.5;
-  float dist, angle;                
-  float scale_x = 0.1;                  // smaller values = zoom in
-  float scale_y = 0.1;
-  float scale_z = 0.1;       
-  float offset_x, offset_y, offset_z;     
-  float z;  
-  float low_limit  = 0;                 // getting contrast by highering the black point
-  float high_limit = 1;                                            
-};
-
-render_parameters animation;     // all animation parameters in one place
-
-#define num_oscillators 10
-
-struct oscillators {
-
-  float master_speed;            // global transition speed
-  float offset[num_oscillators]; // oscillators can be shifted by a time offset
-  float ratio[num_oscillators];  // speed ratios for the individual oscillators                                  
-};
-
-oscillators timings;             // all speed settings in one place
-
-struct modulators {  
-
-  float linear[num_oscillators];        // returns 0 to FLT_MAX
-  float radial[num_oscillators];        // returns 0 to 2*PI
-  float directional[num_oscillators];   // returns -1 to 1
-  float noise_angle[num_oscillators];   // returns 0 to 2*PI        
-};
-
-modulators move;                 // all oscillator based movers and shifters at one place
-
-struct rgb {
-
-  float red, green, blue;
-};
-
-rgb pixel;
-
-float show1, show2, show3, show4, show5, show6, show7, show8, show9, show0;
-
+ANIMartRIX art;
 
 //******************************************************************************************************************
 
@@ -112,7 +63,7 @@ void setup() {
 
   Serial.begin(115200);                 // check serial monitor for current fps count
  
-  render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
+  art.render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
                                                                             // polar origin is set to matrix centre
   matrix.addLayer(&backgroundLayer); 
   matrix.setBrightness(brightness); 
@@ -139,7 +90,7 @@ void loop() {
   //Water();                // nice water simulation
   //Complex_Kaleido_6();    // red blue moire
   //Complex_Kaleido_5();    // interference pattern
-  Complex_Kaleido_4();    // colorful slow mandala
+  art.Complex_Kaleido_4();    // colorful slow mandala
   //Complex_Kaleido_3();
   //Complex_Kaleido_2();    // hypnotic smooth
   //Complex_Kaleido();
@@ -177,7 +128,7 @@ void loop() {
   //Chasing_Spirals();      // slim
   //Rotating_Blob();        // 
   
-  show_frame();
+  art.show_frame();
  
 } 
 
