@@ -116,7 +116,13 @@ unsigned long a, b, c;                  // for time measurements
 
 float show1, show2, show3, show4, show5, show6, show7, show8, show9, show0;
 
+ANIMartRIX() {}
+
 ANIMartRIX(int w, int h, struct CRGB *data, bool serpentine) {
+  this->init(w, h, data, serpentine);
+}
+
+void init(int w, int h, struct CRGB *data, bool serpentine) {
   this->num_x  = w;
   this->num_y = h;
   this->buffer = data;
