@@ -131,6 +131,10 @@ void init(int w, int h, struct CRGB *data, bool serpentine) {
                                                                            // polar origin is set to matrix centre
 }
 
+void setBuffer(struct CRGB *data) {
+  this->buffer = data;
+}
+
 // Dynamic darkening methods:
 
 float subtract(float &a, float&b) {
