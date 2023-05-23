@@ -106,8 +106,8 @@ CRGB* buffer;
 bool  serpentine;
 
 // TODO set sizes
-float polar_theta[99][99];        // look-up table for polar angles
-float distance[99][99];           // look-up table for polar distances
+float polar_theta[32][32];        // look-up table for polar angles
+float distance[32][32];           // look-up table for polar distances
 
 unsigned long a, b, c;                  // for time measurements
 
