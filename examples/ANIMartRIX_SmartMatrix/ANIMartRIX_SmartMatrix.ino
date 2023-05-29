@@ -26,7 +26,6 @@ License CC BY-NC 3.0
 
 #include <MatrixHardware_Teensy4_ShieldV5.h>        // SmartLED Shield for Teensy 4 (V5)
 #include <SmartMatrix.h>
-#include <FastLED.h>
 #include <ANIMartRIX.h>
 
 #define num_x       64                       // how many LEDs are in one row?

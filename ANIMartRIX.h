@@ -24,7 +24,7 @@ License CC BY-NC 3.0
 
 */
 
-//#include <SmartMatrix.h>
+#include <vector>
 #include <FastLED.h>
 
 #define num_oscillators 10
