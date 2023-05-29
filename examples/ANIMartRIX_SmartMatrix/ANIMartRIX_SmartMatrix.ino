@@ -82,58 +82,58 @@ void setup() {
 void loop() {             
 
 
-  //Module_Experiment10();   // HSV scroll (bad palette resolution)
-  //Module_Experiment9();    // red stripes
-  //Module_Experiment8();    // another ambilight...very nice
-  //Module_Experiment7();    // slow ambilight ripples redish
-  //Module_Experiment6();    // slower ripples red-yellow
-  //Module_Experiment5();    // watery red ripples
-  //Module_Experiment4();    // slow RGB middle zoom dist^2
-  //Zoom2();
-  //Module_Experiment3();   // inside out zoomed in
-  //Module_Experiment2();   // stretched distance, fire colors
-  //Module_Experiment1();   // inside out demo
-  //Parametric_Water();     // slow blue ambientlight
-  //Water();                // nice water simulation
-  //Complex_Kaleido_6();    // red blue moire
-  //Complex_Kaleido_5();    // interference pattern
+  //animatrix.Module_Experiment10();   // HSV scroll (bad palette resolution)
+  //animatrix.Module_Experiment9();    // red stripes
+  //animatrix.Module_Experiment8();    // another ambilight...very nice
+  //animatrix.Module_Experiment7();    // slow ambilight ripples redish
+  //animatrix.Module_Experiment6();    // slower ripples red-yellow
+  //animatrix.Module_Experiment5();    // watery red ripples
+  //animatrix.Module_Experiment4();    // slow RGB middle zoom dist^2
+  //animatrix.Zoom2();
+  //animatrix.Module_Experiment3();   // inside out zoomed in
+  //animatrix.Module_Experiment2();   // stretched distance, fire colors
+  //animatrix.Module_Experiment1();   // inside out demo
+  //animatrix.Parametric_Water();     // slow blue ambientlight
+  //animatrix.Water();                // nice water simulation
+  //animatrix.Complex_Kaleido_6();    // red blue moire
+  //animatrix.Complex_Kaleido_5();    // interference pattern
   animatrix.Complex_Kaleido_4();    // colorful slow mandala
-  //Complex_Kaleido_3();
-  //Complex_Kaleido_2();    // hypnotic smooth
-  //Complex_Kaleido();
-  //SM10();                 // like 9 but fire colors - slow
-  //SM9();                  // polar domain warping
-  //SM8();                  // careful: flashy rings
-  //SM7();                  // wild rings
-  //SM6();                  // red + blue, pretty and beautiful one, my favourite so far
-  //SM5();                  // nice colorful roto blobs
-  //SM4();                  // layer merge test
-  //SM3();                  // cartesian domain warping
-  //SM2();                  // roro zoom
-  //SM1();                  // copy caleido
-  //Big_Caleido();          // 5/6 Kaleido + rings
-  //RGB_Blobs5();           // sqrtf dist
-  //RGB_Blobs4();
-  //RGB_Blobs3();
-  //RGB_Blobs2();
-  //RGB_Blobs();            // multi roto stuff
-  //Polar_Waves();          // spiral waves
-  //Slow_Fade();            // red big spiral 
-  //Zoom();                 // boring
-  //Hot_Blob();             // something firey, hot center
-  //Spiralus2();            // slow
-  //Spiralus();             // *2
-  //Yves();                 // red warpings
-  //Scaledemo1();           // *3 + ring red blue
-  //Lava1();                // slow ambilight
-  //Caleido3();             // roto
-  //Caleido2();             // roto *2
-  //Caleido1();             // star like
-  //Distance_Experiment();  // big orange yellow smooth
-  //Center_Field();         // boring green yello red
-  //Waves();                // cool big red blue
-  //Chasing_Spirals();      // slim
-  //Rotating_Blob();        // 
+  //animatrix.Complex_Kaleido_3();
+  //animatrix.Complex_Kaleido_2();    // hypnotic smooth
+  //animatrix.Complex_Kaleido();
+  //animatrix.SM10();                 // like 9 but fire colors - slow
+  //animatrix.SM9();                  // polar domain warping
+  //animatrix.SM8();                  // careful: flashy rings
+  //animatrix.SM7();                  // wild rings
+  //animatrix.SM6();                  // red + blue, pretty and beautiful one, my favourite so far
+  //animatrix.SM5();                  // nice colorful roto blobs
+  //animatrix.SM4();                  // layer merge test
+  //animatrix.SM3();                  // cartesian domain warping
+  //animatrix.SM2();                  // roro zoom
+  //animatrix.SM1();                  // copy caleido
+  //animatrix.Big_Caleido();          // 5/6 Kaleido + rings
+  //animatrix.RGB_Blobs5();           // sqrtf dist
+  //animatrix.RGB_Blobs4();
+  //animatrix.RGB_Blobs3();
+  //animatrix.RGB_Blobs2();
+  //animatrix.RGB_Blobs();            // multi roto stuff
+  //animatrix.Polar_Waves();          // spiral waves
+  //animatrix.Slow_Fade();            // red big spiral 
+  //animatrix.Zoom();                 // boring
+  //animatrix.Hot_Blob();             // something firey, hot center
+  //animatrix.Spiralus2();            // slow
+  //animatrix.Spiralus();             // *2
+  //animatrix.Yves();                 // red warpings
+  //animatrix.Scaledemo1();           // *3 + ring red blue
+  //animatrix.Lava1();                // slow ambilight
+  //animatrix.Caleido3();             // roto
+  //animatrix.Caleido2();             // roto *2
+  //animatrix.Caleido1();             // star like
+  //animatrix.Distance_Experiment();  // big orange yellow smooth
+  //animatrix.Center_Field();         // boring green yello red
+  //animatrix.Waves();                // cool big red blue
+  //animatrix.Chasing_Spirals();      // slim
+  //animatrix.Rotating_Blob();        // 
   
  
    backgroundLayer.swapBuffers(false);
