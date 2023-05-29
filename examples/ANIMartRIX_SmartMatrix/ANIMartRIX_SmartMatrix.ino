@@ -47,12 +47,23 @@ const uint8_t  kBackgroundLayerOptions = (SM_BACKGROUND_OPTIONS_NONE);
 SMARTMATRIX_ALLOCATE_BUFFERS(matrix, kMatrixWidth, kMatrixHeight, kRefreshDepth, kDmaBufferRows, kPanelType, kMatrixOptions);
 SMARTMATRIX_ALLOCATE_BACKGROUND_LAYER(backgroundLayer, kMatrixWidth, kMatrixHeight, COLOR_DEPTH, kBackgroundLayerOptions);
 
-#define NUM_LEDS ((num_x) * (num_y))
-CRGB leds[num_x * num_y];               // framebuffer
-
-bool serpentine = false;
-
-ANIMartRIX art(num_x, num_y, leds, serpentine);
+class SmartMatrixANIMartRIX : public ANIMartRIX {
+  rgb24* buffer;
+  public:
+  SmartMatrixANIMartRIX(int x, int y) {
+    this->init(x, y, false);
+  }
+  void setBuffer(rgb24 *buffer) {
+    this->buffer = buffer;
+  }
+  void setPixelColor(int x, int y, rgb pixel) {
+    buffer[xy(x,y)] = rgb24(pixel.red, pixel.green, pixel.blue);
+  }
+  void setPixelColor(int index, rgb pixel) {
+    buffer[index] = rgb24(pixel.red, pixel.green, pixel.blue);
+  }
+};
+SmartMatrixANIMartRIX animatrix(num_x, num_y);
 
 //******************************************************************************************************************
 
@@ -64,6 +75,7 @@ void setup() {
   matrix.addLayer(&backgroundLayer); 
   matrix.setBrightness(brightness); 
   matrix.begin();
+  animatrix.setBuffer(backgroundLayer.backBuffer());
 }
 
 //*******************************************************************************************************************
@@ -86,7 +98,7 @@ void loop() {
   //Water();                // nice water simulation
   //Complex_Kaleido_6();    // red blue moire
   //Complex_Kaleido_5();    // interference pattern
-  art.Complex_Kaleido_4();    // colorful slow mandala
+  animatrix.Complex_Kaleido_4();    // colorful slow mandala
   //Complex_Kaleido_3();
   //Complex_Kaleido_2();    // hypnotic smooth
   //Complex_Kaleido();
@@ -124,14 +136,9 @@ void loop() {
   //Chasing_Spirals();      // slim
   //Rotating_Blob();        // 
   
-  // TODO: nasty hack, but ok for now
-   rgb24 *buffer = backgroundLayer.backBuffer();
-   for(int i = 0; i < NUM_LEDS; i++) {
-     buffer[i] = leds[i];
-   }
-   
+ 
    backgroundLayer.swapBuffers(false);
-   EVERY_N_MILLIS(500) art.report_performance();   // check serial monitor for report 
+   EVERY_N_MILLIS(500) animatrix.report_performance();   // check serial monitor for report 
 
 } 
 

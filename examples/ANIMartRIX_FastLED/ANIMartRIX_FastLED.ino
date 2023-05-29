@@ -35,7 +35,21 @@ CRGB leds[NUM_LED];               // framebuffer
 
 bool serpentine = true;
 
-ANIMartRIX art(num_x, num_y, leds, serpentine);
+class FastLEDANIMartRIX : public ANIMartRIX {
+  CRGB* leds;
+  public:
+  FastLEDANIMartRIX(int x, int y, CRGB* leds, bool serpentine) {
+    this->init(x, y, serpentine);
+    this->leds = leds;
+  }
+  void setPixelColor(int x, int y, rgb pixel) {
+    leds[xy(x,y)] = CRGB(pixel.red, pixel.green, pixel.blue);
+  }
+  void setPixelColor(int index, rgb pixel) {
+    leds[index] = CRGB(pixel.red, pixel.green, pixel.blue);
+  }
+};
+FastLEDANIMartRIX animatrix(num_x, num_y, leds, serpentine);
 
 //******************************************************************************************************************
 
@@ -63,7 +77,7 @@ void loop() {
   // art.RGB_Blobs4();
   // art.RGB_Blobs3();
   // art.RGB_Blobs2();
-  art.RGB_Blobs();
+  animatrix.RGB_Blobs();
   // art.Polar_Waves();
   // art.Slow_Fade();
   // art.Zoom2();
@@ -84,6 +98,6 @@ void loop() {
   // art.Rotating_Blob();
   // art.Rings();
   FastLED.show();
-  EVERY_N_MILLIS(500) art.report_performance();   // check serial monitor for report 
+  EVERY_N_MILLIS(500) animatrix.report_performance();   // check serial monitor for report 
 } 
 

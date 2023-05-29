@@ -101,8 +101,6 @@ int num_y; // how many rows?
 
 #define radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
 
-//#define NUM_LEDS ((num_x) * (num_y))
-CRGB* buffer; 
 bool  serpentine;
 
 // TODO set sizes
@@ -118,21 +116,16 @@ float show1, show2, show3, show4, show5, show6, show7, show8, show9, show0;
 
 ANIMartRIX() {}
 
-ANIMartRIX(int w, int h, struct CRGB *data, bool serpentine) {
-  this->init(w, h, data, serpentine);
+ANIMartRIX(int w, int h,  bool serpentine) {
+  this->init(w, h, serpentine);
 }
 
-void init(int w, int h, struct CRGB *data, bool serpentine) {
+void init(int w, int h,  bool serpentine) {
   this->num_x  = w;
   this->num_y = h;
-  this->buffer = data;
   this->serpentine = serpentine;
   render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
                                                                            // polar origin is set to matrix centre
-}
-
-void setBuffer(struct CRGB *data) {
-  this->buffer = data;
 }
 
 // Dynamic darkening methods:
@@ -389,9 +382,9 @@ void get_ready() {  // wait until new buffer is ready, measure time
   // b = micros(); 
 }
 
-CRGB setPixelColor(rgb pixel) {
-  return CRGB(pixel.red, pixel.green, pixel.blue);
-}
+virtual void setPixelColor(int x, int y, rgb pixel) = 0;
+
+virtual void setPixelColor(int index, rgb pixel) = 0;
 
 // Show the current framerate, rendered pixels per second,
 // rendering time & time spend to push the data to the leds.
@@ -477,7 +470,7 @@ void Rotating_Blob() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -537,7 +530,7 @@ void Chasing_Spirals() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -594,7 +587,7 @@ void Rings() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
   }
  
 }
@@ -643,7 +636,7 @@ void Waves() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -699,7 +692,7 @@ void Center_Field() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -756,7 +749,7 @@ void Distance_Experiment() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -823,7 +816,7 @@ void Caleido1() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -888,7 +881,7 @@ void Caleido2() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -963,7 +956,7 @@ void Caleido3() {
 
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
 
     }
   }
@@ -1028,7 +1021,7 @@ void Lava1() {
       
       pixel = rgb_sanity_check(pixel);
 
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
 
     }
   }
@@ -1086,7 +1079,7 @@ void Scaledemo1() {
       
       pixel = rgb_sanity_check(pixel);
 
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1163,7 +1156,7 @@ void Yves() {
       pixel.blue  = 0;
       
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1226,7 +1219,7 @@ void Spiralus() {
       pixel.blue  = f*(show3-show1);
       
       pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -1291,7 +1284,7 @@ void Spiralus2() {
       pixel.blue  = f*(show3-show1);
       
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1344,7 +1337,7 @@ void Hot_Blob() { // nice one
       pixel.green   = linear * radial* 0.3* (show2-show4);
       
       pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
  
@@ -1385,7 +1378,7 @@ void Zoom() { // nice one
       
       
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1443,7 +1436,7 @@ void Slow_Fade() { // nice one
       
       
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
  
@@ -1497,7 +1490,7 @@ void Polar_Waves() { // nice one
       
       
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1553,7 +1546,7 @@ void RGB_Blobs() { // nice one
       
       
       pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
   
@@ -1606,7 +1599,7 @@ void RGB_Blobs2() { // nice one
       pixel.blue   = radial * (show3-show2);
      
       pixel = rgb_sanity_check(pixel);
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
   
@@ -1659,7 +1652,7 @@ void RGB_Blobs3() { // nice one
       pixel.blue   = radial * (show3+show2)*0.5 * x/15;
      
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1714,7 +1707,7 @@ void RGB_Blobs4() { // nice one
       pixel.blue   = radial * (show3+show2)*0.5 * x/15;
      
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -1770,7 +1763,7 @@ void RGB_Blobs5() { // nice one
      
       pixel = rgb_sanity_check(pixel);
    
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
 
@@ -1849,7 +1842,7 @@ void Big_Caleido() { // nice one
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   //show_frame();
@@ -1933,11 +1926,11 @@ void SM1() { // nice one
      
       pixel = rgb_sanity_check(pixel);
       //leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
 
-      buffer[xy(31-x, y)] = setPixelColor(pixel);
-      buffer[xy(31-x, 31-y)] = setPixelColor(pixel);
-      buffer[xy(x, 31-y)] = setPixelColor(pixel);
+      setPixelColor(xy(31-x, y), pixel);
+      setPixelColor(xy(31-x, 31-y), pixel);
+      setPixelColor(xy(x, 31-y), pixel);
     }
   }
   //show_frame();
@@ -2001,7 +1994,7 @@ void SM2() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
 
       
     }
@@ -2095,7 +2088,7 @@ void SM3() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
 
     }
   }
@@ -2152,7 +2145,7 @@ void SM4() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
 
     }
   }
@@ -2248,7 +2241,7 @@ void SM5() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2349,7 +2342,7 @@ void SM6() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2427,7 +2420,7 @@ void SM8() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2509,7 +2502,7 @@ void SM9() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2592,7 +2585,7 @@ void SM10() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2681,7 +2674,7 @@ void Complex_Kaleido() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2770,7 +2763,7 @@ void Complex_Kaleido_2() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2869,7 +2862,7 @@ void Complex_Kaleido_3() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -2976,7 +2969,7 @@ void Complex_Kaleido_4() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3027,7 +3020,7 @@ void Complex_Kaleido_5() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3086,7 +3079,7 @@ void Complex_Kaleido_6() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3174,7 +3167,7 @@ void Water() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3268,7 +3261,7 @@ void Parametric_Water() {
      
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3306,7 +3299,7 @@ void Module_Experiment1() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3346,7 +3339,7 @@ void Module_Experiment2() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3386,7 +3379,7 @@ void Module_Experiment3() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3426,7 +3419,7 @@ void Zoom2() { // nice one
       
       
       pixel = rgb_sanity_check(pixel);
-      buffer[num_x * y + x] = setPixelColor(pixel);
+      setPixelColor((num_x * y + x), pixel);
     }
   }
   
@@ -3503,7 +3496,7 @@ void Module_Experiment4() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3547,7 +3540,7 @@ void Module_Experiment5() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3611,7 +3604,7 @@ void Module_Experiment6() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3676,7 +3669,7 @@ void Module_Experiment7() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3768,7 +3761,7 @@ void Module_Experiment8() {
       
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3812,7 +3805,7 @@ void Module_Experiment9() {
     
       pixel = rgb_sanity_check(pixel);
       
-      buffer[xy(x, y)] = setPixelColor(pixel);
+     setPixelColor(x, y, pixel);
     }
   }
 }
@@ -3904,8 +3897,12 @@ void Module_Experiment10() {
       pixel = rgb_sanity_check(pixel);
 
       byte a = millis()/100;
-      
-      buffer[xy(x, y)] = CRGB( CHSV(((a + show1 + show2) + show3), 255, 255));
+      CRGB p = CRGB( CHSV(((a + show1 + show2) + show3), 255, 255));
+      rgb pixel;
+      pixel.red = p.red;
+      pixel.green = p.green;
+      pixel.blue = p.blue;
+      setPixelColor(x, y, pixel);
     }
   }
 }
