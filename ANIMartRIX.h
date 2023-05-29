@@ -103,9 +103,8 @@ int num_y; // how many rows?
 
 bool  serpentine;
 
-// TODO set sizes
-float polar_theta[32][32];        // look-up table for polar angles
-float distance[32][32];           // look-up table for polar distances
+std::vector<std::vector<float>> polar_theta;        // look-up table for polar angles
+std::vector<std::vector<float>> distance;           // look-up table for polar distances
 
 unsigned long a, b, c;                  // for time measurements
 
@@ -301,6 +300,9 @@ float render_value(render_parameters &animation) {
 // the polar coordinates
 
 void render_polar_lookup_table(float cx, float cy) {
+
+  polar_theta.resize(num_x, std::vector<float>(num_y, 0.0f));
+  distance.resize(num_x, std::vector<float>(num_y, 0.0f));
 
   for (int xx = 0; xx < num_x; xx++) {
     for (int yy = 0; yy < num_y; yy++) {
