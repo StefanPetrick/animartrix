@@ -136,7 +136,7 @@ void loop() {
   //Rotating_Blob();        // 
   
  
-   backgroundLayer.swapBuffers(false);
+   backgroundLayer.swapBuffers(true);
    EVERY_N_MILLIS(500) animatrix.report_performance();   // check serial monitor for report 
 
 } 
