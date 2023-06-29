@@ -101,7 +101,7 @@ int num_y; // how many rows?
 
 float speed_factor = 1; // 0.1 to 10
 
-#define radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
+float radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
 
 bool  serpentine;
 
@@ -125,6 +125,12 @@ void init(int w, int h,  bool serpentine) {
   this->num_x  = w;
   this->num_y = h;
   this->serpentine = serpentine;
+  if(w <= 16) { 
+    this->radial_filter_radius = 11; 
+  }
+  else {
+    this->radial_filter_radius = 23; // on 32x32, use 11 for 16x16
+  }
   render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
                                                                            // polar origin is set to matrix centre
 }
