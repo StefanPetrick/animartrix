@@ -99,6 +99,8 @@ public:
 int num_x; // how many LEDs are in one row?
 int num_y; // how many rows?
 
+float speed_factor = 1; // 0.1 to 10
+
 #define radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
 
 bool  serpentine;
@@ -125,6 +127,15 @@ void init(int w, int h,  bool serpentine) {
   this->serpentine = serpentine;
   render_polar_lookup_table((num_x / 2) - 0.5, (num_y / 2) - 0.5);          // precalculate all polar coordinates 
                                                                            // polar origin is set to matrix centre
+}
+
+/**
+ * @brief Set the Speed Factor 0.1 to 10 - 1 for original speed
+ * 
+ * @param speed 
+ */
+void setSpeedFactor(float speed)  {
+  this->speed_factor = speed;
 }
 
 // Dynamic darkening methods:
@@ -220,7 +231,7 @@ return lerp(w,lerp(v,lerp(u, grad(P(AA  ), x, y, z),    /* AND ADD */
 
 void calculate_oscillators(oscillators &timings) { 
 
-  double runtime = millis() * timings.master_speed;  // global anaimation speed
+  double runtime = millis() * timings.master_speed * speed_factor;  // global anaimation speed
 
   for (int i = 0; i < num_oscillators; i++) {
     
