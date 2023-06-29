@@ -1941,9 +1941,9 @@ void SM1() { // nice one
       //leds[xy(x, y)] = CRGB(pixel.red, pixel.green, pixel.blue);
      setPixelColor(x, y, pixel);
 
-      setPixelColor(xy(31-x, y), pixel);
-      setPixelColor(xy(31-x, 31-y), pixel);
-      setPixelColor(xy(x, 31-y), pixel);
+      setPixelColor(xy((num_x -1)-x, y), pixel);
+      setPixelColor(xy((num_x -1)-x, (num_y -1)-y), pixel);
+      setPixelColor(xy(x, (num_y -1)-y), pixel);
     }
   }
   //show_frame();
@@ -2826,7 +2826,7 @@ void Complex_Kaleido_3() {
       animation.scale_x    = 0.07 * size * (move.directional[1]+1.1);
       animation.scale_y    = 0.07 * size * (move.directional[2]+1.3);;
       animation.offset_z   = -12 * move.linear[1];;
-      animation.offset_x   = -31 * move.linear[1];
+      animation.offset_x   = -(num_x -1) * move.linear[1];
       animation.offset_y   = 0;
       animation.low_limit  = 0;
       show2                = render_value(animation);
