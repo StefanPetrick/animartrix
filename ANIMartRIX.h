@@ -101,7 +101,7 @@ int num_y; // how many rows?
 
 float speed_factor = 1; // 0.1 to 10
 
-float radial_filter_radius 23.0;      // on 32x32, use 11 for 16x16
+float radial_filter_radius = 23.0;      // on 32x32, use 11 for 16x16
 
 bool  serpentine;
 
