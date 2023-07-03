@@ -127,7 +127,9 @@ void loop() {
   float speedFactor = (float)map(v, 0, 255, 10, 100) / 10.0f;
   animatrix.setSpeedFactor(speedFactor);
 
+  animatrix.logOutput();
   FastLED.show();
+  animatrix.logFrame();
   EVERY_N_MILLIS(500)
   animatrix.report_performance();  // check serial monitor for report
 }

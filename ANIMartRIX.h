@@ -395,15 +395,21 @@ uint16_t xy(uint8_t x, uint8_t y) {
 
 
 void get_ready() {  // wait until new buffer is ready, measure time
-  // TODO: make callback
-  // a = micros(); 
-  // while(backgroundLayer.isSwapPending());
-  // b = micros(); 
+  a = micros();
+  logOutput();
 }
 
 virtual void setPixelColor(int x, int y, rgb pixel) = 0;
 
 virtual void setPixelColor(int index, rgb pixel) = 0;
+
+void logOutput() {
+  b = micros();
+}
+
+void logFrame() {
+  c = micros();
+}
 
 // Show the current framerate, rendered pixels per second,
 // rendering time & time spend to push the data to the leds.

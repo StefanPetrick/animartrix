@@ -65,6 +65,11 @@ class SmartMatrixANIMartRIX : public ANIMartRIX {
   void setPixelColor(int index, rgb pixel) {
     buffer[index] = rgb24(pixel.red, pixel.green, pixel.blue);
   }
+  void logOutput() {
+    while(backgroundLayer.isSwapPending());
+    b = micros();
+  }
+
 };
 SmartMatrixANIMartRIX animatrix(num_x, num_y);
 
@@ -158,6 +163,7 @@ void loop() {
   // animatrix.Lava1();
 
    backgroundLayer.swapBuffers(true);
+   animatrix.logFrame();
    
   EVERY_N_MILLIS(500) {
     animatrix.report_performance();  // check serial monitor for report

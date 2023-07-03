@@ -97,7 +97,9 @@ void loop() {
   // art.Chasing_Spirals();
   // art.Rotating_Blob();
   // art.Rings();
+  animatrix.logOutput();
   FastLED.show();
+  animatrix.logFrame();
   EVERY_N_MILLIS(500) animatrix.report_performance();   // check serial monitor for report 
 } 
 
