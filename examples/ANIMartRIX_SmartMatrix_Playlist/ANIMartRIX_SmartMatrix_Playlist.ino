@@ -99,8 +99,8 @@ void setup() {
   // gPatterns.push_back(std::bind(&ANIMartRIX::Module_Experiment1, animatrix));   // inside out demo
   // gPatterns.push_back(std::bind(&ANIMartRIX::Parametric_Water, animatrix));     // slow blue ambientlight
   // gPatterns.push_back(std::bind(&ANIMartRIX::Water, animatrix));                // nice water simulation
-  // gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_6, animatrix));    // red blue moire
-  // gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_5, animatrix));    // interference pattern
+  gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_6, animatrix));    // red blue moire
+  gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_5, animatrix));    // interference pattern
   gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_4, animatrix));    // colorful slow mandala
   gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_3, animatrix));
   gPatterns.push_back(std::bind(&ANIMartRIX::Complex_Kaleido_2, animatrix));    // hypnotic smooth
@@ -114,7 +114,7 @@ void setup() {
   // gPatterns.push_back(std::bind(&ANIMartRIX::SM4, animatrix));                  // layer merge test
   // gPatterns.push_back(std::bind(&ANIMartRIX::SM3, animatrix));                  // cartesian domain warping
   // gPatterns.push_back(std::bind(&ANIMartRIX::SM2, animatrix));                  // roro zoom
-  // gPatterns.push_back(std::bind(&ANIMartRIX::SM1, animatrix));                  // copy caleido
+  gPatterns.push_back(std::bind(&ANIMartRIX::SM1, animatrix));                  // copy caleido
   // gPatterns.push_back(std::bind(&ANIMartRIX::Big_Caleido, animatrix));          // 5/6 Kaleido + rings
   // gPatterns.push_back(std::bind(&ANIMartRIX::RGB_Blobs5, animatrix));           // sqrtf dist
   // gPatterns.push_back(std::bind(&ANIMartRIX::RGB_Blobs4, animatrix));
@@ -130,12 +130,12 @@ void setup() {
   // gPatterns.push_back(std::bind(&ANIMartRIX::Yves, animatrix));                 // red warpings
   // gPatterns.push_back(std::bind(&ANIMartRIX::Scaledemo1, animatrix));           // *3 + ring red blue
   gPatterns.push_back(std::bind(&ANIMartRIX::Lava1, animatrix));                // slow ambilight
-  // gPatterns.push_back(std::bind(&ANIMartRIX::Caleido3, animatrix));             // roto
-  // gPatterns.push_back(std::bind(&ANIMartRIX::Caleido2, animatrix));             // roto *2
-  // gPatterns.push_back(std::bind(&ANIMartRIX::Caleido1, animatrix));             // star like
+  gPatterns.push_back(std::bind(&ANIMartRIX::Caleido3, animatrix));             // roto
+  gPatterns.push_back(std::bind(&ANIMartRIX::Caleido2, animatrix));             // roto *2
+  gPatterns.push_back(std::bind(&ANIMartRIX::Caleido1, animatrix));             // star like
   // gPatterns.push_back(std::bind(&ANIMartRIX::Distance_Experiment, animatrix));  // big orange yellow smooth
   // gPatterns.push_back(std::bind(&ANIMartRIX::Center_Field, animatrix));         // boring green yello red
-  // gPatterns.push_back(std::bind(&ANIMartRIX::Waves, animatrix));                // cool big red blue
+  gPatterns.push_back(std::bind(&ANIMartRIX::Waves, animatrix));                // cool big red blue
   // gPatterns.push_back(std::bind(&ANIMartRIX::Chasing_Spirals, animatrix));      // slim
   // gPatterns.push_back(std::bind(&ANIMartRIX::Rotating_Blob, animatrix));        // 
   
@@ -166,8 +166,8 @@ void loop() {
   EVERY_N_SECONDS( 10 ) { 
     pattern++;
     if(pattern >= gPatternCount) pattern = 0;
+    Serial.println("New pattern");
    } // change patterns periodically
-   Serial.println("New pattern");
 } 
 
 
