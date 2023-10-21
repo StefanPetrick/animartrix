@@ -373,7 +373,13 @@ rgb rgb_sanity_check(rgb &pixel) {
       //if (pixel.red < 0)     pixel.red = fabsf(pixel.red);
       //if (pixel.green < 0) pixel.green = fabsf(pixel.green);
       //if (pixel.blue < 0)   pixel.blue = fabsf(pixel.blue);
-      
+
+      // Can never be negative colour
+      if (pixel.red < 0)     pixel.red = 0;
+      if (pixel.green < 0) pixel.green = 0;
+      if (pixel.blue < 0)   pixel.blue = 0;
+
+  
       // discard everything above the valid 8 bit colordepth 0-255 range
       if (pixel.red   > 255)   pixel.red = 255;
       if (pixel.green > 255) pixel.green = 255;
