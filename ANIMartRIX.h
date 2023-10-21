@@ -3189,9 +3189,9 @@ void Water() {
      
       //pixel.red    = show2;
       
+      pixel.blue    = (0.7*show2+0.6*show3+0.5*show4);
       pixel.red     = pixel.blue-40;
       pixel.green   = 0;
-      pixel.blue    = (0.7*show2+0.6*show3+0.5*show4);
       //pixel.red     = radial*show3;
       //pixel.green     = 0.9*radial*show4;
       
